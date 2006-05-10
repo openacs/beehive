@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="beehive" package_version="0.1d" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Continue">Continue</msg>
+  <msg key="Session_by_learners">by learners</msg>
+  <msg key="Session_Controlling">Controlling the session (activating/terminating)</msg>
+  <msg key="Session_Controlling_timer">Controlling the timer</msg>
+  <msg key="Session_Date">Date</msg>
+  <msg key="Session_Date_text">This is when the live session will start</msg>
+  <msg key="Session_Day">Day</msg>
+  <msg key="Session_Group_default_size">Group default size</msg>
+  <msg key="Session_Group_formation">Group formation</msg>
+  <msg key="Session_Group_maximum_size">Group maximum size</msg>
+  <msg key="Session_Group_minimum_size">Group minimum size</msg>
+  <msg key="Session_Hour">Hour</msg>
+  <msg key="Session_Month">Month</msg>
+  <msg key="Session_Providing_date">Providing the session date
+</msg>
+  <msg key="Session_Providing_script">Providing the collaboration script</msg>
+  <msg key="Session_Randomly_by_system">Session Randomly by system</msg>
+  <msg key="Session_Specific_Roles">Specific Roles</msg>
+  <msg key="Session_Specific_Roles_text">You may want every group member to have the same role (participant) or you may want to include special roles (moderator, secretary, judge, etc.). To include more than one role, separate them with forward slash /.
+If the size of the group is greater than the number of roles, the last role that you list will be the default for the rest.</msg>
+  <msg key="Session_Technique_Context">Context</msg>
+  <msg key="Session_Technique_Example">Example</msg>
+  <msg key="Session_Technique_Groups_structure">Groups structure</msg>
+  <msg key="Session_Technique_name">Technique name</msg>
+  <msg key="Session_Technique_Problem">Problem</msg>
+  <msg key="Session_Technique_Solution">Solution &lt;br&gt;Flow of Events</msg>
+  <msg key="Session_Technique_Version_name">Version name</msg>
+  <msg key="Session_Title">Title</msg>
+  <msg key="Session_Title_text">This is the session title your students will see</msg>
+  <msg key="Session_Year">Year</msg>
+</message_catalog>
