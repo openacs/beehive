@@ -29,7 +29,7 @@ ad_page_contract {
 
 set number $session_id
 
-set ig ""
+
 set el ""
 
 # to get the stored tasks
@@ -40,7 +40,7 @@ db_multirow session get_session_info {}
 
 # set a flag if no related info for selected tasks is required
 set relatedflag  " "
-if { $t12 != "checked"   && $t35 != "checked" && $t13 != "checked" && $t14 != "checked" && $t36 != "checked" } {
+if { $t12 != "checked"    && $t13 != "checked" && $t14 != "checked"  && $t4 != "checked" && $t37 != "checked" && $t10 != "checked"} {
 	# no related info is needed
 set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln newtechnique_flage}] 
 ad_returnredirect "create-edit-session6?$url_import_var"
@@ -71,6 +71,7 @@ ad_form -name activity_entery_form1    -form {
 	}
 	
 	{sln:text(hidden) 
+                 {before_html "[_ beehive.character_note]"} 
                  {value $sln}
 	}
         
@@ -79,42 +80,61 @@ ad_form -name activity_entery_form1    -form {
                  {value $newtechnique_flage}
         
 	}
+	
         
  }       
 
+
+
+if { $t4 == "checked" } {  
+	ad_form -extend -name activity_entery_form1 -form {
+	
+        {groupinfo:text(textarea) 
+            
+	    {html {  cols 60  rows 8}} 
+	    {label "#beehive.Group_info#"}
+            {help_text "[_ beehive.group_note]" }
+	    	   
+	}
+	}
+}
+
+
 if { $t12 == "checked" } {
     ad_form -extend -name activity_entery_form1 -form {
-	{st:text(textarea)
-	    {html {  cols 60  rows 6}}
+	{sessioninfo:text(textarea)
+            
+	    {html {  cols 60  rows 10}}
 	    {label "#beehive.Session_Info#"}
+            {help_text "[_ beehive.session_note]" }
 	      
 	}
     }
 }
-if { $t35 == "checked" } {
-	if { $controlld2 == "checked" } {    
+if { $t14 == "checked" } {
+	 
 	ad_form -extend -name activity_entery_form1 -action "create-edit-session2.tcl" -form {
-	{idn:text(text) 
+	{ideasnumber:text(text) 
 	    {html {size 5}} 
 	    {label "#beehive.Ideas_number#"}
 	    	   
 	}
-        {idt:text(textarea) 
+        {ideastext:text(textarea) 
 	    {html {  cols 60  rows 6}} 
 	    {label "#beehive.List_of_ideas#"}
 	    	   
 	}
 	}
-}
+
 }
 
 
 if { $t13 == "checked" } {  
 	ad_form -extend -name activity_entery_form1 -form {
 	
-        {srt:text(textarea) 
+        {roleinfo:text(textarea) 
 	    {html {  cols 60  rows 8}} 
-	    {label "#beehive.Subject_info# $roles"}
+	    {label "#beehive.Role_info# $roles"}
             {help_text "[_ beehive.Roles_note]" }
 	    	   
 	}
@@ -122,29 +142,31 @@ if { $t13 == "checked" } {
 }
 
 
-if { $t14 == "checked" } {
-    ad_form -extend -name activity_entery_form1 -form {
-	{ih:text(text)
-	    {html {size 60}} 
-	    {label "#beehive.Description_heading#"}
-	    {value "#beehive.Description_heading_default#"}	   
-	}
-        {it:text(textarea) 
-	    {html {  cols 60  rows 6}} 
-	    {label "#beehive.Description_text#"}
-	      
-	}
-    }
-}
 
 
-if { $t36 == "checked" } {
+if { $t37 == "checked"   } {
 	   
 	ad_form -extend -name activity_entery_form1 -form {
 	
-        {ynt:text(textarea) 
-	    {html {  cols 60  rows 6}} 
-	    {label "#beehive.yesNo_question#"}
+        {smallsharedtext:text(textarea),optional 
+	    {html {  cols 60  rows 12}} 
+            {help_text "[_ beehive.Collaboration_script_info]" }
+	    {label "#beehive.Collaboration_scrip#"}
+	    	   
+	}
+	}
+  
+
+}
+
+if {  $t10 == "checked"  } {
+	   
+	ad_form -extend -name activity_entery_form1 -form {
+	
+        {largesharedtext:text(textarea),optional 
+	    {html {  cols 60  rows 12}} 
+            {help_text "[_ beehive.Collaboration_script_info]" }
+	    {label "#beehive.Lage_Collaboration_scrip#"}
 	    	   
 	}
 	}

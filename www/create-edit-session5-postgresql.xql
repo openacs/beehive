@@ -12,7 +12,7 @@
   <fullquery name="do_update">      
     <querytext>
 
-       UPDATE beehive_ses SET st = :st , srt = :srt , idn = :idn ,idt = :idt,ih = :ih , it = :it , ynt = :ynt   WHERE number = :session_id
+       UPDATE beehive_ses SET sessioninfo = :sessioninfo , roleinfo = :roleinfo , ideasnumber = :ideasnumber ,ideastext = :ideastext,ih = :ih , largesharedtext = :largesharedtext, groupinfo = :groupinfo , smallsharedtext = :smallsharedtext   WHERE number = :session_id
     </querytext>
   </fullquery>
 

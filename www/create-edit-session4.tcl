@@ -17,9 +17,9 @@ ad_page_contract {
 { roles: " " }
 
 
-{ ig: " " }
+
 { el: " " }
-{ igg: " " }
+
 { ell: " " }
 { sln: 0 }
 { newtechnique_flage: 55 }
@@ -74,7 +74,7 @@ template::multirow foreach session {
 
 
 # to upload file for withe board drawing  
-	if {$t20 == "checked" } {
+	if {$t20 == "checked" || $t11 == "checked"   } {
 		         
 			set localfilewb [ns_queryget sld]
 
@@ -98,48 +98,18 @@ template::multirow foreach session {
 			}
 		
 	}     
-
-# to upload resources file
-	if {$t32 == "checked" } {
-		         
-			set localfilesf [ns_queryget el]
-
-			if {$localfilesf != "" } {
-				set ifpsf [open [ns_queryget [subst {el}].tmpfile] r]
-   
-				# open the filename for writing
-
-				set pthsf [acs_root_dir]  
-				set filenamesf [subst {$pthsf/packages/beehive/www/slides/[subst {sess$session_id}]$el}] 
-
-				set ofpsf [open $filenamesf w+]
-
-				fconfigure $ifpsf -translation binary
-				fconfigure $ofpsf -translation binary
-
-				ns_cpfp $ifpsf $ofpsf
-
-				close $ifpsf
-				close $ofpsf
-			} else {
-                                # to update resources file name 
-				db_dml edit_value2 {}
-			}
-		
-	}     
-
 # to upload staged file 
 	if {$t33 == "checked" } {
 		         
-			set localfiledf [ns_queryget ig]
+			set localfiledf [ns_queryget el]
 
 			if {$localfiledf != "" } {
-				set ifpdf [open [ns_queryget [subst {ig}].tmpfile] r]
+				set ifpdf [open [ns_queryget [subst {el}].tmpfile] r]
    
 				# open the filename for writing
 
 				set pthdf [acs_root_dir]  
-				set filenamedf [subst {$pthdf/packages/beehive/www/slides/[subst {sess$session_id}]$ig}] 
+				set filenamedf [subst {$pthdf/packages/beehive/www/slides/[subst {sess$session_id}]$el}] 
 
 				set ofpdf [open $filenamedf w+]
 
@@ -152,7 +122,7 @@ template::multirow foreach session {
 				close $ofpdf
 			}  else {
                                 # to update staged file name
-				db_dml edit_value3 {}
+				db_dml edit_value2 {}
 			} 
 		
 	}     

@@ -107,7 +107,7 @@ db_dml update_values_of_session {}
   	
 # set a flag if no related info for selected tasks is required
 set relatedflag  " "
-if {   $t33 != "checked"  && $t32 != "checked" && $t18 != "checked"  && $t20 != "checked" } {
+if {   $t33 != "checked"   && $t18 != "checked"  && $t20 != "checked"   && $t11 != "checked"} {
 # no uploading files 
 set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln newtechnique_flage}] 
  ad_returnredirect "create-edit-session5?$url_import_var" 

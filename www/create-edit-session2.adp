@@ -24,10 +24,6 @@ document.form1.t5.checked =  true;
 return false;
 }
 
-function deny1() {
-
-alert("note that  if you want to select the Participating in ideas voting (LEARNERS) task, you should first select the (ideas listing) task" );
-}
 
 function deny2() {
 
@@ -47,6 +43,8 @@ alert("to use this component properly you must have more than one role" );
 <input type = "hidden" name = "session_id" value = @session_id@>
 <input type = "hidden" name = "roles" value = "@roles@">
 <input type = "hidden" name = "newtechnique_flage" value = "@newtechnique_flage@">
+
+<input type = "hidden" name = "btype" value = "1">
 
 
 
@@ -80,6 +78,18 @@ New
 
 </td>
 </tr></table>
+
+
+
+<table cellspacing="2" cellpadding="2" border="0">
+<tr ><td  BGCOLOR="#F2f1cb">
+<b>
+#beehive.agenda_Description#
+
+@solution@</b>
+</td>
+</tr></table>
+
 
 <table cellspacing="2" cellpadding="2" border="0">
 
@@ -131,10 +141,13 @@ New
 <input type = "checkbox" name="t11" value ="checked" checked = "true" onclick="return deny(this);"><font color="#FF0000"> #beehive._Providing_Title# | <a href= "/beehive/more-task?num=11"> #beehive.Tasks_more#</a></font>
 <br>
 
-<input type = "checkbox" name="taskn.12" value ="checked"   @t12@><font color="#333399"> #beehive.Providing_Info#| <a href= "/beehive/more-task?num=12"> #beehive.Tasks_more#</a></font>
+<input type = "checkbox" name="taskn.12" value ="checked"   @t12@><font color="#306754"> #beehive.Providing_Info#| <a href= "/beehive/more-task?num=12"> #beehive.Tasks_more#</a></font>
 <br>
 
-<input type = "checkbox" name="taskn.13" value ="checked"   @t13@ onclick="return deny2(this);"><font color="#333399"> #beehive.Providing_info_Role#| <a href= "/beehive/more-task?num=13"> #beehive.Tasks_more#</a></font>
+
+<input type = "checkbox" name="taskn.4" value ="checked"   @t4@><font color="#306754"> #beehive.Providing_group_Info#| <a href= "/beehive/more-task?num=4"> #beehive.Tasks_more#</a></font>
+<br>
+<input type = "checkbox" name="taskn.13" value ="checked"   @t13@ onclick="return deny2(this);"><font color="#306754"> #beehive.Providing_info_Role#| <a href= "/beehive/more-task?num=13"> #beehive.Tasks_more#</a></font>
 <br>
 
 
@@ -143,13 +156,6 @@ New
 <input type = "checkbox" name="t10" value ="checked" @t10@><font color="#333399"> Providing  info/tasks to a Group</font>
 <br>
 -->
-
-<input type = "checkbox" name="taskn.14" value ="checked"   @t14@ ><font color="#333399"> #beehive.Providing_Description#| <a href= "/beehive/more-task?num=14"> #beehive.Tasks_more#</a></font> 
-<br>
-
-<input type = "checkbox" name="taskn.32" value ="checked"   @t32@><font color="#333399">  #beehive.Providing_external_links# | <a href= "/beehive/more-task?num=32"> #beehive.Tasks_more#</a></font>
-<br>
-
 
 
 
@@ -168,8 +174,15 @@ New
 
 <input type = "checkbox" name="taskn.17" value ="checked"   @t17@> <font color="#306754"> #beehive.Presenting_question# | <a href= "/beehive/more-task?num=17"> #beehive.Tasks_more#</a></font> 
 <br>
+<input type = "checkbox" name="taskn.36" value ="checked"    @t36@><font color="#306754"> #beehive.yes_no_voting#| <a href= "/beehive/more-task?num=36"> #beehive.Tasks_more#</a></font>    
+<br>
+<input type = "checkbox" name="taskn.14" value ="checked"   @t14@ ><font color="#306754"> #beehive.Providing_Survey#</font> 
+<br>
+
 <input type = "checkbox" name="taskn.34" value ="checked"   @t34@><font color="#306754"> #beehive.Debriefing# | <a href= "/beehive/more-task?num=34"> #beehive.Tasks_more#</a></font> 
 <br>
+
+
 
 <u>#beehive.Assessments#</u>
 <br>
@@ -203,7 +216,7 @@ New
 -->
 <input type = "checkbox" name="anon1" value ="checked"  @anon1@>#beehive.Task_Anonymous#
 <input type = "checkbox" name="adda1" value ="checked"  @adda1@>#beehive.Task_Audio#
-<input type = "checkbox" name="addv1" value ="checked"  @addv1@>#beehive.Task_Video# | <a href= "/beehive/more-task?num=22"> #beehive.Tasks_more#</a></font>
+ | <a href= "/beehive/more-task?num=22"> #beehive.Tasks_more#</a></font>
 <br>
 <input type = "checkbox" name="taskn.23" value ="checked"    @t23@><font color="#306754">#beehive.Entire_session_discussions# 
 <!--
@@ -213,56 +226,56 @@ New
 -->
 <input type = "checkbox" name="anon2" value ="checked"  @anon2@>#beehive.Task_Anonymous#
 <input type = "checkbox" name="adda2" value ="checked"  @adda2@>#beehive.Task_Audio#
-<input type = "checkbox" name="addv2" value ="checked"  @addv2@>#beehive.Task_Video# | <a href= "/beehive/more-task?num=23"> #beehive.Tasks_more#</a></font>
+</font>
 
 <br>
 <input type = "checkbox" name="taskn.24" value ="checked"    @t24@> <font color="#306754">#beehive.Similar_roles_discussions# 
 <input type = "checkbox" name="anon3" value ="checked"  @anon3@>#beehive.Task_Anonymous#
 <input type = "checkbox" name="adda3" value ="checked"  @adda3@>#beehive.Task_Audio#
-<input type = "checkbox" name="addv3" value ="checked"  @addv3@>#beehive.Task_Video# | <a href= "/beehive/more-task?num=24"> #beehive.Tasks_more#</a></font>
+</font>
 
 
 <br>
 <input type = "checkbox" name="taskn.26" value ="checked"    @t26@> <font color="#306754">#beehive.Ideas_listing#  
-<input type="radio" name="btype" value="1" @btype1@>#beehive.each_group#
-<input type="radio" name="btype" value="2"@btype2@>#beehive.entire_session#)  
-<input type = "checkbox" name="anon4" value ="checked"  @anon4@>#beehive.Task_Anonymous# | <a href= "/beehive/more-task?num=26"> #beehive.Tasks_more#</a> </font> 
-<br>
-<input type = "checkbox" name="taskn.38" value ="checked"    @t38@><font color="#306754"> #beehive.Discussing_ideas# | <a href= "/beehive/more-task?num=38"> #beehive.Tasks_more#</a> 
-</font>
-<br>
+<input type = "checkbox" name="anon4" value ="checked"  @anon4@>#beehive.Task_Anonymous# |
 
+ <a href= "/beehive/more-task?num=26"> #beehive.Tasks_more#</a> #beehive.followed_by#
+<input type = "checkbox" name="taskn.38" value ="checked"    @t38@><font color="#306754"> #beehive.Discussing_ideas# |
 
+ <a href= "/beehive/more-task?num=38"> #beehive.Tasks_more#</a> 
 
+<input type = "checkbox" name="taskn.35" value ="checked"    @t35@><font color="#306754">#beehive.voting_by# |
 
-<input type = "checkbox" name="taskn.35" value ="checked"    @t35@ onclick="return deny1(this);"><font color="#306754"> #beehive.voting_by# 
-<input type="radio" name="controlld" value="1" @controlld1@ > #beehive.Learners#
-<input type="radio" name="controlld" value="2" @controlld2@> #beehive.facilitator# ) 
  <a href= "/beehive/more-task?num=35"> #beehive.Tasks_more#</a></font> 
 <br>
-<input type = "checkbox" name="taskn.36" value ="checked"    @t36@><font color="#306754"> #beehive.yes_no_voting#| <a href= "/beehive/more-task?num=36"> #beehive.Tasks_more#</a></font>    
-<br>
-<input type = "checkbox" name="taskn.37" value ="checked"    @t37@><font color="#306754"> #beehive.collaborative_writing# </font>| <a href= "/beehive/more-task?num=37"> #beehive.Tasks_more#</a></font>
+
+
+<input type = "checkbox" name="taskn.37" value ="checked"    @t37@>  <font color="#306754">#beehive.smallgroup#  </font> <input type = "checkbox" name="taskn.10" value ="checked"    @t10@> #beehive.largegroup# #beehive.collaborative_writing# |<a href= "/beehive/more-task?num=37"> #beehive.Tasks_more#</a></font>
 
 <br>
-<input type = "checkbox" name="taskn.20" value ="checked"    @t20@><font color="#306754"> #beehive.Whiteboard_drawing# | <a href= "/beehive/more-task?num=20"> #beehive.Tasks_more#</a>  </font>
+<input type = "checkbox" name="taskn.20" value ="checked"    @t20@><font color="#306754"> #beehive.smallgroup#  <input type = "checkbox" name="taskn.11" value ="checked"    @t11@> #beehive.largegroup#  #beehive.Whiteboard_drawing#| <a href= "/beehive/more-task?num=20"> #beehive.Tasks_more#</a>  </font>
+<br>
+<input type = "checkbox" name="taskn.32" value ="checked"    @t32@><font color="#306754"> #beehive.Video_conferencing#  </font>
 
 <br>
 <input type = "checkbox" name="taskn.27" value ="checked"    @t27@><font color="#306754"> #beehive.Icebreakering# | <a href= "/beehive/more-task?num=27"> #beehive.Tasks_more#</a> </font> 
+
+<!--
 <br>
 <input type = "checkbox" name="taskn.30" value ="checked"    @t30@><font color="#306754"> #beehive.Group_submission#| <a href= "/beehive/more-task?num=30"> #beehive.Tasks_more#</a></font>
-
+-->
+<br>
+<input type = "checkbox" name="taskn.29" value ="checked"    @t29@><font color="#306754"> #beehive.Submitting_own_resolution# | <a href= "/beehive/more-task?num=29"> #beehive.Tasks_more#</a></font>   
 
 <br>
 <u>#beehive.Individual_Tasks#</u>
 <br>
-<input type = "checkbox" name="taskn.28" value ="checked"    @t28@><font color="#306754"> #beehive.Individual_writing#| <a href= "/beehive/more-task?num=28"> #beehive.Tasks_more#</a></font> 
-<br>
-<input type = "checkbox" name="taskn.29" value ="checked"    @t29@><font color="#306754"> #beehive.Submitting_own_resolution# | <a href= "/beehive/more-task?num=29"> #beehive.Tasks_more#</a></font>   
+<input type = "checkbox" name="taskn.28" value ="checked"    @t28@><font color="#306754"> #beehive.Silent_thinking#| <a href= "/beehive/more-task?num=28"> #beehive.Tasks_more#</a></font> 
+
 <br>
 <input type = "checkbox" name="taskn.6" value ="checked"   @t6@> <font color="#306754"> #beehive.Internet_searching#  | <a href= "/beehive/more-task?num=6"> #beehive.Tasks_more#</a></font> 
 <br>
-<input type = "checkbox" name="taskn.31" value ="checked"    @t31@><font color="#306754"> #beehive.Silent_thinking# | <a href= "/beehive/more-task?num=31"> #beehive.Tasks_more#</a> </font>
+<input type = "checkbox" name="taskn.31" value ="checked"    @t31@><font color="#333399"> #beehive.Note_taking# | <a href= "/beehive/more-task?num=31"> #beehive.Tasks_more#</a> </font>
 <br>
 <input type = "checkbox" name="taskn.8" value ="checked"   @t8@><font color="#333399">  #beehive.Facilitator_Asking# | <a href= "/beehive/more-task?num=8"> #beehive.Tasks_more#</a></font>
 <br>

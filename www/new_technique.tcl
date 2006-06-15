@@ -50,32 +50,33 @@ ad_form -name activity_entery_form -cancel_url $redirect_url -form {
 		{label "#beehive.Session_Technique_Version_name#  "} 
 		{html {size 101}} 	
 	}    
-        {uses:text(text),optional  
-		{label "#beehive.Session_Technique_uses# "} 
-		{html {size 101}} 	
-	}  
-	{problem:text(text),optional  
-		{label "#beehive.Session_Technique_Problem# "} 
-		{html { cols 100  rows 2 }} 	
-	}    
+        #{uses:text(text),optional  
+	#	{label "#beehive.Session_Technique_uses# "} 
+	#	{html {size 101}} 	
+	#}  
+	#{problem:text(text),optional  
+	#	{label "#beehive.Session_Technique_Problem# "} 
+	#	{html { cols 100  rows 2 }} 	
+	#}    
 
-	{example:text(textarea),optional   
-		{label "#beehive.Session_Technique_Example#  "} 
-		{html {  cols 100  rows 2}} 	
-	} 
+	#{example:text(textarea),optional   
+	#	{label "#beehive.Session_Technique_Example#  "} 
+	#	{html {  cols 100  rows 2}} 	
+	#} 
 
-        {context:text(textarea),optional   
-		{label "#beehive.Session_Technique_Context#  "} 
-		{html {  cols 100  rows 2}} 	
-	}
+        #{context:text(textarea),optional   
+	#	{label "#beehive.Session_Technique_Context#  "} 
+	#	{html {  cols 100  rows 2}} 	
+	#}
 
-    	{gstructure:text(textarea),optional   
-		{label "#beehive.Session_Technique_Groups_structure#  "} 
-		{html {  cols 100  rows 2}} 	
-	}
-	{solution:text(textarea),optional   
-		{label "#beehive.Session_Technique_Solution#  "} 
-		{html {  cols 100  rows 3}} 	
+    	#{gstructure:text(textarea),optional   
+	#	{label "#beehive.Session_Technique_Groups_structure#  "} 
+	#	{html {  cols 100  rows 2}} 	
+	#}
+	{solution:text(textarea)  
+		{label "#beehive.Session_Technique_Solution#  "}
+                {help_text "[_ beehive.Session_agenda_text]" } 
+		{html {  cols 90  rows 8}} 	
 	} 
         {group:text(hidden) 
                  {value $group}
@@ -89,8 +90,9 @@ ad_form -name activity_entery_form -cancel_url $redirect_url -form {
         
 
 } -new_data {
-         db_dml new_session_sql {insert into beehive_pattern (num,techniqe,name,problem,example,context,gstructure,solution,uses) values (:num, :techniqe,:name,:problem,:example,:context,:gstructure,:solution,:uses)}
-            
+         db_dml new_session_sql {insert into beehive_pattern (num,techniqe,name,solution) values (:num, :techniqe,:name,:solution)}
+         
+	 
 
 } -after_submit {
         

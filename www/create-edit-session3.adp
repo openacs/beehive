@@ -31,7 +31,6 @@ function check() {
 <input type = "hidden" name = "roles" value = "@roles@">
 <input type = "hidden" name = "sln" value = @sln@>
 <input type = "hidden" name = "ell" value = @el@>
-<input type = "hidden" name = "igg" value = @ig@>
 <input type = "hidden" name = "newtechnique_flage" value = "@newtechnique_flage@">
 
 <table cellspacing="2" cellpadding="2" border="0">
@@ -58,7 +57,7 @@ function check() {
 		
 	</if>
         <br><br>
-        <if @t20@ eq "checked" >
+        <if @t20@ eq "checked" or @t11@ eq "checked" >
         <if @edit_flage@ not eq "0" >
 	#beehive.Whiteboard_image#  <br><br>
 	</if>
@@ -83,31 +82,13 @@ function check() {
 
         </else>
 	
-		#beehive.File# <input type="file" name="ig"  size="40" ><br>
+		#beehive.File# <input type="file" name="el"  size="40" ><br>
 	
     <br><br>		
    </if>
       
 	
-	<!-- in case of selecting the providing  resources file links task -->
 	
-   <if @t32@ eq "checked" >
-        <if @edit_flage@ not eq "0" >
-	#beehive.Resource_file# <br><br>
-	</if>
-        <else>
-        #beehive.Resource_file_change#  <br><br>
-
-        </else>
-	       
-		#beehive.File# <input type="file" name="el"  size="40"   ><br>
-	
-   <br><br>		
-   </if>
-
-
-
-
 
 
 

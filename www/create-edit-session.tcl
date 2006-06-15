@@ -113,21 +113,22 @@ ad_form -name activity_entery_form -cancel_url $redirect_url  -form {
                  
         }
         
-	{mx:text(text)  
-		{label "#beehive.Session_Group_maximum_size#"}  
-		{html {size 3}} 
-                {value "$mx"}
+	#{mx:text(text)  
+	#	{label "#beehive.Session_Group_maximum_size#"}  
+	#	{html {size 3}} 
+        #        {value "$mx"}
 		
-	} 
+	#} 
 
-	{mn:text(text) 
-		{label "#beehive.Session_Group_minimum_size#"}  
-		{html {size 3}}
-                {value "$mn"}
-	}  
+	#{mn:text(text) 
+	#	{label "#beehive.Session_Group_minimum_size#"}  
+	#	{html {size 3}}
+        #        {value "$mn"}
+	#}  
         {df:text(text) 
 		{label "#beehive.Session_Group_default_size#"}  
 		{html {size 3}}
+		{help_text "[_ beehive.Session_groupsize_text]" }
                 {value "$df"}
 	} 
 	        {edit_flage:text(hidden) 
@@ -137,6 +138,9 @@ ad_form -name activity_entery_form -cancel_url $redirect_url  -form {
 	
 	{technique_name:text(hidden) 
                  {value $technique_name}
+	}
+        {solution:text(hidden) 
+                 {value $solution}
 	}
         {technique_version:text(hidden) 
                  {value $technique_version}
@@ -161,12 +165,16 @@ ad_form -name activity_entery_form -cancel_url $redirect_url  -form {
      SELECT * from beehive_ses where number = :number 
 
 } -new_data {
+         set mx $df
+         set mn $df
          db_dml new_session_sql {}
          if {$newtechnique_flage == 0 } {
 	db_dml update_pattern_value {}
 	 }
             
 } -edit_data {
+        set mx $df
+         set mn $df
         db_dml session_update {}  
 
 

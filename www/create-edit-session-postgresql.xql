@@ -16,7 +16,7 @@
    </fullquery>
    <fullquery name="new_session_sql">
      <querytext>
-       insert into beehive_ses (number,tutor, roles,mx,mn,df,datew,titlew,classname,stype,name) values (:number,:namet,:roles,:mx,:mn,:df,:datew,:titlew,:group,:technique_name,:technique_version)
+       insert into beehive_ses (number,tutor, roles,mx,mn,df,datew,titlew,classname,stype,name,solution) values (:number,:namet,:roles,:mx,:mn,:df,:datew,:titlew,:group,:technique_name,:technique_version,:solution)
      </querytext>
    </fullquery>
     <fullquery name="update_pattern_value">

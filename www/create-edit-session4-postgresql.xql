@@ -15,7 +15,7 @@
 <fullquery name="edit_values">      
     <querytext>
 
-       UPDATE beehive_ses SET ig = :ig , el = :el    WHERE number = :session_id
+       UPDATE beehive_ses SET  el = :el    WHERE number = :session_id
     </querytext>
   </fullquery>
   
@@ -32,11 +32,6 @@
        UPDATE beehive_ses SET el = :ell   WHERE number = :session_id
     </querytext>
   </fullquery>
-  <fullquery name="edit_value3">      
-    <querytext>
-
-       UPDATE beehive_ses SET ig = :igg   WHERE number = :session_id 
-    </querytext>
-  </fullquery>
+  
 
 </queryset>

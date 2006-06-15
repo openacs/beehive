@@ -67,6 +67,14 @@ ad_page_contract {
     helping:onelist
     tracking:onelist
     dynamiclink:onelist
+    smallgroupsharedtext:onelist
+    largegroupsharedtext:onelist
+    SessionInfo:onelist
+    GroupInfo:onelist
+    RoleInfo:onelist
+    noteTaking:onelist
+    Survey:onelist
+    
      
 }
 
@@ -75,7 +83,7 @@ ad_page_contract {
 
 #  initialization of the script's variables
 
-for {set i 1} {$i <= 20} {incr i} {  
+for {set i 1} {$i <= 25} {incr i} {  
 		 set [subst {ins$i}] " " 
 		 set [subst {tr$i}] " " 
 		 set [subst {tl$i}] " " 
@@ -87,8 +95,21 @@ foreach name [array names tla] {
 
 eval set [subst {ins$name}] $[subst {insa($name)}] 
 eval set [subst {tr$name}] $[subst {tra($name)}] 
+
+
+
+
+
 eval set [subst {tl$name}] $[subst {tla($name)}] 
 eval set [subst {tool$name}] $[subst {toola($name)}] 
+
+# to fix the timelimit format remove : symbol 
+eval set dates $[subst {tla($name)}]
+
+set dates  [subst {[string range $dates 0 1][string range $dates 3 4][string range $dates 6 7]}]
+eval set [subst {tl$name}] $dates
+
+
 
 }
 
@@ -141,6 +162,7 @@ set guiding " "
 set helping " "
 set tracking " "
 set timing " "
+set noteTaking " "
       set tools [linsert $tools end "timing"]
       if {$t5 == "checked" } {
       set timing [linsert $timing end "teacher"]
@@ -166,6 +188,11 @@ if {$t7 == "checked" } {
       set tracking [linsert $tracking end "teacher"]
       incr toolc 
       }
+if {$t31 == "checked" } {
+      set tools [linsert $tools end "noteTaking"]
+      set noteTaking [linsert $noteTaking end "all"]
+      incr toolc 
+      }
 
 # start filling the tools array from the static infoboxs (title, description,etc)
 
@@ -177,53 +204,11 @@ if {$t7 == "checked" } {
       incr toolc 
 
 
-if {$t12 == "checked" } {
-     
-      
-      set tools [linsert $tools end "staticinfo"]
-      set staticinfo [linsert $staticinfo end "Session Info"]
-      set staticinfo [linsert $staticinfo end $st]
-      set staticinfo [linsert $staticinfo end "all"]
-      set staticinfo [linsert $staticinfo end "4"]
-
-      incr toolc 
-      }
-if {$t13 == "checked" } {
-      # fill the role text array 
-      set roleText [split $srt "/"]
-      for {set i 0} {$i < [llength $roleText]} {incr i} { 
-      set tools [linsert $tools end "staticinfo"]
-      set staticinfo [linsert $staticinfo end "Your Role  Info"]
-      set staticinfo [linsert $staticinfo end [lindex  $roleText $i]]
-      set staticinfo [linsert $staticinfo end [lindex  $rolesl $i]]
-      set staticinfo [linsert $staticinfo end "3"]
-
-      incr toolc 
-      }
-      }
-
-
-if {$t32 == "checked" } {
-      set tools [linsert $tools end "staticinfo"]
-      set staticinfo [linsert $staticinfo end "External links"]
-      set staticinfo [linsert $staticinfo end $el]
-      set staticinfo [linsert $staticinfo end "all"]
-      set staticinfo [linsert $staticinfo end "6"]
-
-      incr toolc 
-      }
 
 
 
-if {$t14 == "checked" } {
-      set tools [linsert $tools end "staticinfo"]
-      set staticinfo [linsert $staticinfo end $ih]
-      set staticinfo [linsert $staticinfo end $it]
-      set staticinfo [linsert $staticinfo end "all"]
-      set staticinfo [linsert $staticinfo end "2"]
 
-      incr toolc 
-      }
+
 
 
 
@@ -309,11 +294,15 @@ set chat " "
 set vote  " "
 set monitoring " "
 set floorcontrol  " " 
-
+set smallgroupsharedtext " "
+set largegroupsharedtext " "
 set dynamiclink " "
 set internetsearch " "
-
-
+set SessionInfo " "
+set GroupInfo " "
+set RoleInfo " "
+set Conferencing " "
+set Survey " "
 
 
 for {set i 0} {$i < [llength $toolsl]} {incr i} { 
@@ -427,13 +416,8 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
       		set chat  [linsert $chat end "no"]      
 	}
 		if {[lindex  $toolsl $i] == "IceBreaking" } {
-      		set tools [linsert $tools end "chat"]
-      		set chat  [linsert $chat end "text-and-audio-and-video"]
-      		set chat  [linsert $chat end "turn"]   
-      		set chat  [linsert $chat end "group"] 
-      		set chat  [linsert $chat end "Ice Breaking"]
-      		set chat  [linsert $chat end "no"]
-      		set chat  [linsert $chat end "no"]       
+      		set tools [linsert $tools end "icebreaking"]
+      		  
 	}
 	if {[lindex  $toolsl $i] == "Evaluation" } {
       		set tools [linsert $tools end "chat"]
@@ -446,31 +430,29 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
 	}
 	if {[lindex  $toolsl $i] == "Debriefing" } {
       		set tools [linsert $tools end "chat"]
-      		set chat  [linsert $chat end "text"]
+      		set chat  [linsert $chat end "text-and-audio"]
       		set chat  [linsert $chat end "turn"]   
       		set chat  [linsert $chat end "all"] 
       		set chat  [linsert $chat end "Debriefing"]
       		set chat  [linsert $chat end "no"]  
       		set chat  [linsert $chat end "no"]     
 	}
-
+        
 	if {[lindex  $toolsl $i] == "IdeasVoting" } {
       		set tools [linsert $tools end "vote"]
       		set vote  [linsert $vote end "idea"]
       		set vote  [linsert $vote end "idea Voting"] 
-      		if {$controlld2 == "checked" } {
-          		set vote  [linsert $vote end "teacher"]
-          		set vote  [linsert $vote end   $idn]
-          		set vote  [linsert $vote end $idt]
-      		}    else  {
           		set vote  [linsert $vote end "learners"] 
           		set vote  [linsert $vote end   "none"]
          	 	set vote  [linsert $vote end "none"]
-      		}
 	}
 
 	if {[lindex  $toolsl $i] == "InternetSearch" } {
       		set tools [linsert $tools end "internetsearch"]
+     
+	}
+        if {[lindex  $toolsl $i] == "Conferencing" } {
+      		set tools [linsert $tools end "Conferencing"]
      
 	}
 
@@ -481,22 +463,48 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
 	if {[lindex  $toolsl $i] == "QA" } {
       		set tools [linsert $tools end "qa"]
 	}
-	if {[lindex  $toolsl $i] == "SharedText" } {
-      		set tools [linsert $tools end "sharedtext"]   
+	if {[lindex  $toolsl $i] == "SmallGroupSharedText" } {
+      		set tools [linsert $tools end "smallgroupsharedtext"]
+                set smallgroupsharedtext  [linsert $smallgroupsharedtext end $smallsharedtext]    
 	}
+        if {[lindex  $toolsl $i] == "LargeGroupSharedText" } {
+      		set tools [linsert $tools end "largegroupsharedtext"]
+                set largegroupsharedtext  [linsert $largegroupsharedtext end $largesharedtext]    
+	}
+	if {[lindex  $toolsl $i] == "SessionInfo" } {
+      		set tools [linsert $tools end "SessionInfo"]
+                set SessionInfo  [linsert $SessionInfo end $sessioninfo]    
+	}
+        if {[lindex  $toolsl $i] == "GroupInfo" } {
+      		set tools [linsert $tools end "GroupInfo"]
+                set GroupInfo  [linsert $GroupInfo end $groupinfo]    
+	}
+        if {[lindex  $toolsl $i] == "RoleInfo" } {
+      		set tools [linsert $tools end "RoleInfo"]
+                set RoleInfo  [linsert $RoleInfo end $roleinfo]    
+	}
+        if {[lindex  $toolsl $i] == "Survey" } {
+      		set tools [linsert $tools end "Survey"]
+                set Survey  [linsert $Survey end $ideasnumber] 
+                set Survey  [linsert $Survey end $ideastext]    
+	}
+
 	if {[lindex  $toolsl $i] == "IdeasDiscussion" } {
       		set tools [linsert $tools end "ideasdiscussion"]   
 	}
-	if {[lindex  $toolsl $i] == "DynamicLink" } {
+	if {[lindex  $toolsl $i] == "DownloadFile" } {
       		set tools [linsert $tools end "dynamiclink"]
-      		set dynamiclink  [linsert $dynamiclink end $ig]    
+      		set dynamiclink  [linsert $dynamiclink end $el]    
 	}
  	if {[lindex  $toolsl $i] == "SilentThinking" } {
       		set tools [linsert $tools end "silentthinking"]    
 	}
         
-        if {[lindex  $toolsl $i] == "Whiteboard" } {
-      		set tools [linsert $tools end "whiteboard"]    
+        if {[lindex  $toolsl $i] == "SmallGroupWhiteboard" } {
+      		set tools [linsert $tools end "smallgroupwhiteboard"]    
+	}
+        if {[lindex  $toolsl $i] == "LargeGroupWhiteboard" } {
+      		set tools [linsert $tools end "largegroupwhiteboard"]    
 	}
 	if {[lindex  $toolsl $i] == "Overview" } {
       		set tools [linsert $tools end "overview"]
@@ -507,7 +515,7 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
 	if {[lindex  $toolsl $i] == "YesNo" } {
       		set tools [linsert $tools end "vote"]
       		set vote  [linsert $vote end "yesno"]
-      		set vote  [linsert $vote end $ynt] 
+      		set vote  [linsert $vote end "Answer the above question by clicking on the yes/no buttons below"] 
                 set vote  [linsert $vote end "none"] 
           	set vote  [linsert $vote end   "none"]
          	set vote  [linsert $vote end "none"]
@@ -608,7 +616,7 @@ for {set i 0} {$i < [expr [llength $collaborationActivity] - 1]} {incr i} {
 }
 
 # to define all tools that can be used in this system
-set alltools { "staticinfo"  "timing" "chat"  "vote" "individualwriting" "floorcontrol" "guiding" "monitoring" "internetsearch" "ownresolution" "qa"  "silentthinking" "overview" "helping" "dynamiclink" "sharedtext" "ideasdiscussion" "slides" "tracking" "whiteboard" }
+set alltools { "staticinfo"  "timing" "chat"  "vote" "individualwriting" "floorcontrol" "guiding" "monitoring" "internetsearch" "ownresolution" "qa"  "silentthinking" "overview" "helping" "dynamiclink" "smallgroupsharedtext" "ideasdiscussion" "slides" "tracking" "smallgroupwhiteboard" "SessionInfo" "noteTaking" "Conferencing" "Survey" "largegroupsharedtext" "largegroupwhiteboard" "GroupInfo" "RoleInfo" "icebreaking" }
 
 
 # to publish the xml schema according to this simple structure
@@ -703,27 +711,12 @@ for {set i 0} {$i < [llength $collaborationActivity]} {incr i} {
 
 # to add tools inside collaboration service 
 set kkk  0
-set k1  0
-set k2  0
-set k3  0
-set k4  0
-set k5  0
-set k6  0
-set k7  0
-set k8  0
-set k9  0
-set k10  0
-set k11  0
-set k12  0
-set k13  0
-set k14  0
-set k15  0
-set k16  0
-set k17  0
-set k18  0
-set k19  0
-set k20  0
-set k21  0
+
+for {set i 1} {$i < 31} {incr i} {         
+eval set [subst {k$i}] 0	
+}
+
+
 # when publishing the environment section it will look at the toolsl array
 # and skip the repeated tools so for the pervious example
 # it pass the toolsll[0]  which is the chat,  toolsll[2] which is the vote and toolsll[5] which is the summary
@@ -870,8 +863,9 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
       			incr k16
     		}
 		if {[lindex  $alltools 15] == [lindex  $tools $kkk] } {
-      			$node appendXML "<imsld:sharedtext />"
-     
+      			$node appendXML "<imsld:smallgroupsharedtext />"
+                        set node [$node lastChild]
+      			$node appendXML "<imsld:text>[lindex  $smallgroupsharedtext $k17]</imsld:text>"
       			incr k17
     		}
 		if {[lindex  $alltools 16] == [lindex  $tools $kkk] } {
@@ -891,13 +885,65 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
 		if {[lindex  $alltools 18] == [lindex  $tools $kkk] } {
       			$node appendXML "<imsld:tracking />"
       			set node [$node lastChild]
-       			$node appendXML "<imsld:owner>[lindex  $tracking $k15]</imsld:owner>"
+       			$node appendXML "<imsld:owner>[lindex  $tracking $k20]</imsld:owner>"
        			incr k20
 		}
                 if {[lindex  $alltools 19] == [lindex  $tools $kkk] } {
-      			$node appendXML "<imsld:whiteboard />"
+      			$node appendXML "<imsld:smallgroupwhiteboard />"
       			incr k21
     		}
+
+                if {[lindex  $alltools 20] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:Sessioninfo />"
+                        set node [$node lastChild]
+      			$node appendXML "<imsld:text>[lindex  $SessionInfo $k22]</imsld:text>"
+      			incr k22
+    		}
+                if {[lindex  $alltools 21] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:notetaking />"
+      			
+       			incr k23
+    		}
+                if {[lindex  $alltools 22] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:conferencing />"
+      			incr k24
+    		}
+                if {[lindex  $alltools 23] == [lindex  $tools $kkk] } {
+    			$node appendXML "<imsld:survey />"
+       			set node [$node lastChild]
+       			$node appendXML "<imsld:questions-number>[lindex  $Survey $k25]</imsld:questions-number>"
+       			incr k25
+       			$node appendXML "<imsld:questions-text>[lindex  $Survey $k25]</imsld:questions-text>"
+       			incr k25
+    		}
+                if {[lindex  $alltools 24] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:largegroupsharedtext />"
+                        set node [$node lastChild]
+      			$node appendXML "<imsld:text>[lindex  $largegroupsharedtext $k26]</imsld:text>"
+      			incr k26
+    		}
+                if {[lindex  $alltools 25] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:largegroupwhiteboard />"
+      			incr k27
+    		}
+                if {[lindex  $alltools 26] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:groupinfo />"
+                        set node [$node lastChild]
+      			$node appendXML "<imsld:text>[lindex  $GroupInfo $k28]</imsld:text>"
+      			incr k28
+    		}
+                if {[lindex  $alltools 27] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:roleinfo />"
+                        set node [$node lastChild]
+      			$node appendXML "<imsld:text>[lindex  $RoleInfo $k29]</imsld:text>"
+      			incr k29
+    		}
+                # check for individual writing tool 
+		if {[lindex  $alltools 28] == [lindex  $tools $kkk] } {
+    			$node appendXML "<imsld:icebreaking />"
+      			incr k30 
+    		}
+
 
     		incr kkk  
    		set node [$node parentNode]
@@ -934,7 +980,7 @@ set XML [$root asXML]
         close $fileId 
 
 
-# to generate the graduate attribute
+# to generate the collaboration attribute
 
 # initialize attributes
 set timemanagement "checked" 
@@ -957,7 +1003,7 @@ if {$t26 == "checked"  } {
       # if IdeasPosting 
       set creativethinking "checked"
       }
-if {$t13 == "checked"  || $t12 == "checked" || $t32 == "checked" || $t33 == "checked" || $t17 == "checked" } {
+if {$t13 == "checked"  || $t12 == "checked"  || $t33 == "checked" || $t17 == "checked" } {
       # if IdeasPosting 
       set analyticalskills "checked"
       }

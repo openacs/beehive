@@ -11,7 +11,7 @@
  
 <fullquery name="get_infoall">      
     <querytext>
-    SELECT * from beehive_sessionIntraction where se = :se and gr = 0 order by Type_Interaction     
+    SELECT * from beehive_sessionIntraction where se = :se and gr = 0  order by Type_Interaction     
     </querytext>
   </fullquery>
 

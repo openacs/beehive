@@ -107,33 +107,12 @@ close $ofp
 			
 	}     
 
-# to upload resources file
-	if {$t32 == "checked" } {
-		         
-
-
-			set filename1 [subst {$pth/packages/beehive/www/slides/[subst {sess$number}]$el}]     
-			set filename2 [subst {$pth/packages/beehive/www/slides/[subst {sess$number1}]$el}]  
-			set ifp [open $filename1 r+]
-			set ofp [open $filename2 w+]
-                        fconfigure $ifp -translation binary
-			fconfigure $ofp -translation binary
-
-
-			ns_cpfp $ifp $ofp
-
-			close $ifp
-			close $ofp
-
-			
-					
-	}     
 
 # to upload staged file 
 	if {$t33 == "checked" } {
 		         
-			set filename1 [subst {$pth/packages/beehive/www/slides/[subst {sess$number}]$ig}]     
-			set filename2 [subst {$pth/packages/beehive/www/slides/[subst {sess$number1}]$ig}]  
+			set filename1 [subst {$pth/packages/beehive/www/slides/[subst {sess$number}]$el}]     
+			set filename2 [subst {$pth/packages/beehive/www/slides/[subst {sess$number1}]$el}]  
 			set ifp [open $filename1 r+]
 			set ofp [open $filename2 w+]
                         fconfigure $ifp -translation binary

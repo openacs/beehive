@@ -15,9 +15,7 @@ ad_page_contract {
 { technique_num: 11 }
 { technique_name: " " }
 { roles: " " }
-{ ig: " " }
 { el: " " }
-{ igg: " " }
 { ell: " " }
 
 { sln: 0 }
@@ -37,7 +35,7 @@ set tools " "
 db_multirow sessions get_session_info {}
 	
 template::multirow foreach sessions {
-						}
+					}
 set technique_version $name
 
 if {$edit_flage == 0  } {
@@ -82,59 +80,84 @@ template::multirow foreach info {
      if {$t24 == "checked" } {
       	set tools [linsert $tools end "RolesDisscussion"]
       }
-      if {$t6 == "checked" } {
-      	set tools [linsert $tools end "InternetSearch"]
-      }
+      
       
       if {$t26 == "checked" } {
       	set tools [linsert $tools end "IdeasPosting"]
       } 
+	if {$t38 == "checked" } {
+      	set tools [linsert $tools end "IdeasDiscussion"]
+      }
+      if {$t35 == "checked" } {
+      	set tools [linsert $tools end "IdeasVoting"]
+      }
       if {$t27 == "checked" } {
       	set tools [linsert $tools end "IceBreaking"]
       } 
+      if {$t37 == "checked" } {
+      	set tools [linsert $tools end "SmallGroupSharedText"]
+      }
+      if {$t10 == "checked" } {
+      	set tools [linsert $tools end "LargeGroupSharedText"]
+      }
+      
+      if {$t20 == "checked" } {
+      	set tools [linsert $tools end "SmallGroupWhiteboard"]
+      } 
+      if {$t11 == "checked" } {
+      	set tools [linsert $tools end "LargeGroupWhiteboard"]
+      }    
+      if {$t32 == "checked" } {
+      	set tools [linsert $tools end "Conferencing"]
+      } 
+
       if {$t34 == "checked" } {
       	set tools [linsert $tools end "Debriefing"]
       }     
-      if {$t28 == "checked" } {
-      	set tools [linsert $tools end "IndividualWriting"]
-      }
+      
       if {$t19 == "checked" } {
       	set tools [linsert $tools end "Evaluation"]
       } 
      if {$t30 == "checked" } {
       	set tools [linsert $tools end "Summarizing"]
       }
-      if {$t35 == "checked" } {
-      	set tools [linsert $tools end "IdeasVoting"]
-      }
+      
       if {$t36 == "checked" } {
       	set tools [linsert $tools end "YesNo"]
       }  
-      if {$t29 == "checked" } {
-      	set tools [linsert $tools end "OwnResolution"]
-      }  
+        
       if {$t17 == "checked" } {
       	set tools [linsert $tools end "QA"]
       }  
-      if {$t31 == "checked" } {
-      	set tools [linsert $tools end "SilentThinking"]
-      }  
+	if {$t14 == "checked" } {
+      	set tools [linsert $tools end "Survey"]
+      } 
+      if {$t12 == "checked" } {
+      	set tools [linsert $tools end "SessionInfo"]
+      } 
+      if {$t4 == "checked" } {
+      	set tools [linsert $tools end "GroupInfo"]
+      }
+      if {$t13 == "checked" } {
+      	set tools [linsert $tools end "RoleInfo"]
+      } 
       if {$t15 == "checked" } {
       	set tools [linsert $tools end "Overview"]
       }  
       if {$t33 == "checked" } {
-      	set tools [linsert $tools end "DynamicLink"]
+      	set tools [linsert $tools end "DownloadFile"]
       }  
-      if {$t37 == "checked" } {
-      	set tools [linsert $tools end "SharedText"]
+       
+      if {$t29 == "checked" } {
+      	set tools [linsert $tools end "OwnResolution"]
+      } 
+      if {$t28 == "checked" } {
+      	set tools [linsert $tools end "SilentThinking"]
       }
-      if {$t38 == "checked" } {
-      	set tools [linsert $tools end "IdeasDiscussion"]
+      if {$t6 == "checked" } {
+      	set tools [linsert $tools end "InternetSearch"]
       }
-      if {$t20 == "checked" } {
-      	set tools [linsert $tools end "Whiteboard"]
-      }    
-         
+      
 
 }
 
@@ -142,7 +165,7 @@ template::multirow foreach info {
 
 # to fill the roles 
 set rolesl [split $roles "/"]
-set rolesl [linsert $rolesl end "teacher"]
+# set rolesl [linsert $rolesl end "facilitator"]
 
 
 ad_return_template

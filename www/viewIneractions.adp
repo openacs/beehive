@@ -55,7 +55,7 @@ set datew  [subst {[string range $dates 0 3]/[string range $dates 5 6]/[string r
 
 		<tr class="form-element">
 			<td class="form-label">
-				<b>#beehive.Subject_info# </b>  
+				<b>#beehive.Session_Info# </b>  
 			</td>  
 			<td class="form-widget">  
 				<font face="tahoma,verdana,arial,helvetica,sans-serif" size="-1"> 

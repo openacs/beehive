@@ -19,7 +19,7 @@
 
 #beehive.Select_group_number#: <input type = "text" name ="gr" value= @gr@ size="3">  
 
-<input type = "submit" value ="#beehive.Continue#"> 
+<input type = "submit" value ="#beehive.select#"> 
 <br>
 <if @gr@ not  eq  0 >
 <if @sflage@ eq "true">
@@ -56,7 +56,7 @@
 		</list>
 
 		</select>
-		<input type = "submit" value ="#beehive.Continue#"> 
+		<input type = "submit" value ="#beehive.select#"> 
 
         <if @sflage2@ not eq "false" or @sflage3@ eq  "true" >
 	     <br> <br>	 
@@ -67,9 +67,10 @@
 </if>
 </if>
 <else>
- <a href="@url@/beehive/flash/collaboration.html?user_id1=@user_id1@&hurl=@hurl@&se1=@se1@&flashservera=@flashservera@" > 
-<br>
-<h1>#beehive.Enter#</h1></a>
+<br> 
+<a href="@url@/beehive/flash/collaboration.html?user_id1=@user_id1@&hurl=@hurl@&se1=@se1@&flashservera=@flashservera@" > 
+
+#beehive.Enter#</a>
 </else>
 
 </master>
