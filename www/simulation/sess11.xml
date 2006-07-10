@@ -1,0 +1,117 @@
+<imsld:learning-design identifier="Buzz Group:sharing knowledge">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier="chairperson"/>
+            <imsld:learner identifier="participant"/>
+        </imsld:roles>
+        <imsld:groups identifier="Buzz Group">
+            <imsld:participant roleref="chairperson"/>
+            <imsld:participant roleref="participant"/>
+            <imsld:size maxnumber="3" minnumber="3" defaultnumber="3"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>reading the group info</imsld:instruction>
+                <imsld:time-limit>000100</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>exchanging ideas about your task with your partners</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 3">
+                <imsld:coll-tool-service-ref ref="number 3"/>
+                <imsld:turn roleref="chairperson"/>
+                <imsld:instruction>submit your answer</imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Buzz Group" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+                <imsld:collaboration-activity-ref ref="step 3"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>sharing knowledge</imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:groupinfo>
+                            <imsld:text>your group task is define  learning objects in e learning and give some examples/your group task is define   standards in e learning and give some examples/your group task is define   instructional  designs  in e learning and give some examples</imsld:text>
+                        </imsld:groupinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:chat>
+                            <imsld:chatting-type>text-and-audio</imsld:chatting-type>
+                            <imsld:control-type>turn</imsld:control-type>
+                            <imsld:target>group</imsld:target>
+                            <imsld:heading>Discussion board</imsld:heading>
+                            <imsld:add>no</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-3 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 3">
+                        <imsld:largegroupsharedtext>
+                            <imsld:text>group 1
+what is   the learning objects?
+
+
+group 2
+what is  the  e learning standards?
+
+
+group 3
+what is the   instructional  designs?</imsld:text>
+                        </imsld:largegroupsharedtext>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Buzz Group">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Buzz Group"/>
+                <imsld:activity-structure-ref ref="S- Buzz Group"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

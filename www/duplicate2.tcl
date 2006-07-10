@@ -86,7 +86,7 @@ close $ofp
 
 
 # to upload file for withe board drawing  
-	if {$t20 == "checked" } {
+	if {$t20 == "checked" || $t11 == "checked"  || $t30 == "checked" } {
 		         
 
 

@@ -151,11 +151,7 @@ New
 <br>
 
 
-<!-- 
 
-<input type = "checkbox" name="t10" value ="checked" @t10@><font color="#333399"> Providing  info/tasks to a Group</font>
-<br>
--->
 
 
 
@@ -254,16 +250,20 @@ New
 
 <br>
 <input type = "checkbox" name="taskn.20" value ="checked"    @t20@><font color="#306754"> #beehive.smallgroup#  <input type = "checkbox" name="taskn.11" value ="checked"    @t11@> #beehive.largegroup#  #beehive.Whiteboard_drawing#| <a href= "/beehive/more-task?num=20"> #beehive.Tasks_more#</a>  </font>
+
+<br>
+<input type = "checkbox" name="taskn.2" value ="checked"    @t2@><font color="#306754"> #beehive.smallgroup# <input type = "checkbox" name="taskn.3" value ="checked"    @t3@> #beehive.largegroup#  #beehive.text_Annotation#  </font>
+
+
+
 <br>
 <input type = "checkbox" name="taskn.32" value ="checked"    @t32@><font color="#306754"> #beehive.Video_conferencing#  </font>
 
 <br>
 <input type = "checkbox" name="taskn.27" value ="checked"    @t27@><font color="#306754"> #beehive.Icebreakering# | <a href= "/beehive/more-task?num=27"> #beehive.Tasks_more#</a> </font> 
 
-<!--
-<br>
-<input type = "checkbox" name="taskn.30" value ="checked"    @t30@><font color="#306754"> #beehive.Group_submission#| <a href= "/beehive/more-task?num=30"> #beehive.Tasks_more#</a></font>
--->
+
+
 <br>
 <input type = "checkbox" name="taskn.29" value ="checked"    @t29@><font color="#306754"> #beehive.Submitting_own_resolution# | <a href= "/beehive/more-task?num=29"> #beehive.Tasks_more#</a></font>   
 
@@ -274,8 +274,14 @@ New
 
 <br>
 <input type = "checkbox" name="taskn.6" value ="checked"   @t6@> <font color="#306754"> #beehive.Internet_searching#  | <a href= "/beehive/more-task?num=6"> #beehive.Tasks_more#</a></font> 
+
+<br>
+<input type = "checkbox" name="taskn.30" value ="checked"    @t30@><font color="#306754"> #beehive.self_annotating#| </font>
+
 <br>
 <input type = "checkbox" name="taskn.31" value ="checked"    @t31@><font color="#333399"> #beehive.Note_taking# | <a href= "/beehive/more-task?num=31"> #beehive.Tasks_more#</a> </font>
+
+
 <br>
 <input type = "checkbox" name="taskn.8" value ="checked"   @t8@><font color="#333399">  #beehive.Facilitator_Asking# | <a href= "/beehive/more-task?num=8"> #beehive.Tasks_more#</a></font>
 <br>

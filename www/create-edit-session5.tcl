@@ -40,7 +40,7 @@ db_multirow session get_session_info {}
 
 # set a flag if no related info for selected tasks is required
 set relatedflag  " "
-if { $t12 != "checked"    && $t13 != "checked" && $t14 != "checked"  && $t4 != "checked" && $t37 != "checked" && $t10 != "checked"} {
+if { $t12 != "checked"    && $t13 != "checked" && $t14 != "checked"  && $t4 != "checked" && $t37 != "checked" && $t10 != "checked"  && $t28 != "checked" && $t2 != "checked" && $t3 != "checked"} {
 	# no related info is needed
 set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln newtechnique_flage}] 
 ad_returnredirect "create-edit-session6?$url_import_var"
@@ -111,6 +111,20 @@ if { $t12 == "checked" } {
 	}
     }
 }
+
+if { $t28 == "checked" } {
+    ad_form -extend -name activity_entery_form1 -form {
+	{individualtext:text(textarea)
+            
+	    {html {  cols 60  rows 10}}
+	    {label "#beehive.individual_Info#"}
+           {help_text "[_ beehive.individual_script_info]" }
+	      
+	}
+    }
+}
+
+
 if { $t14 == "checked" } {
 	 
 	ad_form -extend -name activity_entery_form1 -action "create-edit-session2.tcl" -form {
@@ -174,6 +188,35 @@ if {  $t10 == "checked"  } {
 
 }
 
+if {  $t2 == "checked"  } {
+	   
+	ad_form -extend -name activity_entery_form1 -form {
+	
+        {smallannotatedtext:text(textarea) 
+	    {html {  cols 60  rows 12}} 
+            {help_text "[_ beehive.session_note]" }
+	    {label "#beehive.small_text_scrip#"}
+	    	   
+	}
+	}
+  
+
+}
+
+if {  $t3 == "checked"  } {
+	   
+	ad_form -extend -name activity_entery_form1 -form {
+	
+        {largeannotatedtext:text(textarea) 
+	    {html {  cols 60  rows 12}} 
+             {help_text "[_ beehive.session_note]" }
+	    {label "#beehive.large_text_scrip#"}
+	    	   
+	}
+	}
+  
+
+}
 
 
 if { $relatedflag == "false" } {

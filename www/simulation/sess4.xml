@@ -1,0 +1,102 @@
+<imsld:learning-design identifier="Brainstorm:collaborative learning?">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier="participant"/>
+        </imsld:roles>
+        <imsld:groups identifier="Brainstorm">
+            <imsld:participant roleref="participant"/>
+            <imsld:size maxnumber="5" minnumber="5" defaultnumber="5"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>read related info </imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>list some benefits of  collaborative learning?</imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 3">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>list some drawbacks of  collaborative learning?</imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Brainstorm" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+                <imsld:collaboration-activity-ref ref="step 3"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>collaborative learning?</imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:sessioninfo>
+                            <imsld:text>What is collaborative learning?
+Collaborative learning is a method of teaching and learning in which students team together to explore a significant question or create a meaningful project. A group of students discussing a lecture or students from different schools working together over the Internet on a shared assignment are both examples of collaborative learning.
+Over the past twenty-five years, the use of small-group learning has greatly increased. Informal collaborative projects have grown into structured, cooperative group work. Cooperative learning became especially popular in the early 1980s and has matured and evolved since.
+
+One evolving aspect of cooperative and collaborative learning involves how the educational community approaches the composition of the small groups. Debates still occur on this topic. Researchers disagree mainly about whether to group students according to their ability, or to mix them so that stronger students can help the weaker ones learn and themselves learn from the experience of tutoring.
+
+Some researchers, such as Mills 1 and Durden (1992), suggest that gifted students are held back when grouped with weaker students. More researchers support diversity in small groups, however. Radencich and McKay (1995) conclude that grouping by ability does not usually benefit overall achievement and can lead to inequalities of achievement. With good arguments on both sides, most teachers make choices based on their objectives.
+</imsld:text>
+                        </imsld:sessioninfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:chat>
+                            <imsld:chatting-type>text</imsld:chatting-type>
+                            <imsld:control-type>free</imsld:control-type>
+                            <imsld:target>group</imsld:target>
+                            <imsld:heading>The brainstorming Chart</imsld:heading>
+                            <imsld:add>numbering</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Brainstorm">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Brainstorm"/>
+                <imsld:activity-structure-ref ref="S- Brainstorm"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

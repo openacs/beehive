@@ -69,7 +69,10 @@ ad_page_contract {
     dynamiclink:onelist
     smallgroupsharedtext:onelist
     largegroupsharedtext:onelist
+    smallgrouptext:onelist
+    largegrouptext:onelist
     SessionInfo:onelist
+    SilentThinking:onelist
     GroupInfo:onelist
     RoleInfo:onelist
     noteTaking:onelist
@@ -296,9 +299,12 @@ set monitoring " "
 set floorcontrol  " " 
 set smallgroupsharedtext " "
 set largegroupsharedtext " "
+set smallgrouptext " "
+set largegrouptext " "
 set dynamiclink " "
 set internetsearch " "
 set SessionInfo " "
+set SilentThinking " "
 set GroupInfo " "
 set RoleInfo " "
 set Conferencing " "
@@ -497,14 +503,27 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
       		set dynamiclink  [linsert $dynamiclink end $el]    
 	}
  	if {[lindex  $toolsl $i] == "SilentThinking" } {
-      		set tools [linsert $tools end "silentthinking"]    
+      		set tools [linsert $tools end "silentthinking"] 
+                set SilentThinking  [linsert $SilentThinking end $individualtext]   
 	}
         
-        if {[lindex  $toolsl $i] == "SmallGroupWhiteboard" } {
+        if {[lindex  $toolsl $i] == "SmallGroupImageAnnotation" } {
       		set tools [linsert $tools end "smallgroupwhiteboard"]    
 	}
-        if {[lindex  $toolsl $i] == "LargeGroupWhiteboard" } {
+        if {[lindex  $toolsl $i] == "LargeGroupImageAnnotation" } {
       		set tools [linsert $tools end "largegroupwhiteboard"]    
+	}
+
+        if {[lindex  $toolsl $i] == "SmallGrouptextDiscussion" } {
+      		set tools [linsert $tools end "smallgrouptext"]  
+                 set smallgrouptext  [linsert $smallgrouptext end $smallannotatedtext]   
+	}
+        if {[lindex  $toolsl $i] == "LargeGrouptextDiscussion" } {
+      		set tools [linsert $tools end "largegrouptext"]
+                set largegrouptext  [linsert $largegrouptext end $largeannotatedtext]    
+	}
+        if {[lindex  $toolsl $i] == "IndividualAnnotating" } {
+      		set tools [linsert $tools end "individualtext"]    
 	}
 	if {[lindex  $toolsl $i] == "Overview" } {
       		set tools [linsert $tools end "overview"]
@@ -616,7 +635,7 @@ for {set i 0} {$i < [expr [llength $collaborationActivity] - 1]} {incr i} {
 }
 
 # to define all tools that can be used in this system
-set alltools { "staticinfo"  "timing" "chat"  "vote" "individualwriting" "floorcontrol" "guiding" "monitoring" "internetsearch" "ownresolution" "qa"  "silentthinking" "overview" "helping" "dynamiclink" "smallgroupsharedtext" "ideasdiscussion" "slides" "tracking" "smallgroupwhiteboard" "SessionInfo" "noteTaking" "Conferencing" "Survey" "largegroupsharedtext" "largegroupwhiteboard" "GroupInfo" "RoleInfo" "icebreaking" }
+set alltools { "staticinfo"  "timing" "chat"  "vote" "individualwriting" "floorcontrol" "guiding" "monitoring" "internetsearch" "ownresolution" "qa"  "silentthinking" "overview" "helping" "dynamiclink" "smallgroupsharedtext" "ideasdiscussion" "slides" "tracking" "smallgroupwhiteboard" "SessionInfo" "noteTaking" "Conferencing" "Survey" "largegroupsharedtext" "largegroupwhiteboard" "GroupInfo" "RoleInfo" "icebreaking" "individualwhiteboard" "smallgrouptext" "largegrouptext" }
 
 
 # to publish the xml schema according to this simple structure
@@ -712,7 +731,7 @@ for {set i 0} {$i < [llength $collaborationActivity]} {incr i} {
 # to add tools inside collaboration service 
 set kkk  0
 
-for {set i 1} {$i < 31} {incr i} {         
+for {set i 1} {$i < 34} {incr i} {         
 eval set [subst {k$i}] 0	
 }
 
@@ -840,7 +859,10 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
 
 		if {[lindex  $alltools 11] == [lindex  $tools $kkk] } {
       			$node appendXML "<imsld:silentthinking />"
-      			incr k13
+      			set node [$node lastChild]
+      			$node appendXML "<imsld:text>[lindex  $SilentThinking $k13]</imsld:text>"
+			
+			incr k13
     		}
 
 
@@ -894,7 +916,7 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
     		}
 
                 if {[lindex  $alltools 20] == [lindex  $tools $kkk] } {
-      			$node appendXML "<imsld:Sessioninfo />"
+      			$node appendXML "<imsld:sessioninfo />"
                         set node [$node lastChild]
       			$node appendXML "<imsld:text>[lindex  $SessionInfo $k22]</imsld:text>"
       			incr k22
@@ -942,6 +964,22 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
 		if {[lindex  $alltools 28] == [lindex  $tools $kkk] } {
     			$node appendXML "<imsld:icebreaking />"
       			incr k30 
+    		}
+                if {[lindex  $alltools 29] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:individualwhiteboard />"
+      			incr k31
+    		}
+                if {[lindex  $alltools 30] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:smallgrouptext />"
+                        set node [$node lastChild]
+      			$node appendXML "<imsld:text>[lindex  $smallgrouptext $k32]</imsld:text>"
+      			incr k32
+    		}
+                if {[lindex  $alltools 31] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:largegrouptext />"
+                        set node [$node lastChild]
+      			$node appendXML "<imsld:text>[lindex  $largegrouptext $k33]</imsld:text>"
+      			incr k33
     		}
 
 

@@ -1,0 +1,88 @@
+<imsld:learning-design identifier="Presentation:Semantic web  ">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier="participant"/>
+        </imsld:roles>
+        <imsld:groups identifier="Presentation">
+            <imsld:participant roleref="participant"/>
+            <imsld:size maxnumber="20" minnumber="20" defaultnumber="20"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="facilitator"/>
+                <imsld:instruction>entire session watch the slides</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>Any question or comment about the slides</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Presentation" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>Semantic web  </imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:slides>
+                            <imsld:slidesnumber>3</imsld:slidesnumber>
+                        </imsld:slides>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:chat>
+                            <imsld:chatting-type>text</imsld:chatting-type>
+                            <imsld:control-type>system</imsld:control-type>
+                            <imsld:target>all</imsld:target>
+                            <imsld:heading>Discussion board</imsld:heading>
+                            <imsld:add>no</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Presentation">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Presentation"/>
+                <imsld:activity-structure-ref ref="S- Presentation"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

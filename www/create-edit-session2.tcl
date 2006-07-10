@@ -32,7 +32,7 @@ ad_page_contract {
         
 }
 
-set flag1 "false"
+
 if {$edit_flage != 0 } {
 # if it is a new session then get the session's default tasks according to the selected
 # technique's number from the Beehive pattern table
@@ -44,7 +44,7 @@ if {$edit_flage != 0 } {
 		 set [subst {t$i}] " " 
 	}
          
-	
+	set flag1 "false"
 	# to get the default tasks for the selected technique from the  pattern table 
 	db_multirow session get_info_from_pattern {}
  	template::multirow foreach session {

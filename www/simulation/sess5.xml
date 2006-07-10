@@ -1,0 +1,142 @@
+<imsld:learning-design identifier="Debate:Argument for fox hunting ">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier="proposer"/>
+            <imsld:learner identifier="seconder(p)"/>
+            <imsld:learner identifier="opposer"/>
+            <imsld:learner identifier="seconder(o)"/>
+            <imsld:learner identifier="speakers"/>
+        </imsld:roles>
+        <imsld:groups identifier="Debate">
+            <imsld:participant roleref="proposer"/>
+            <imsld:participant roleref="seconder(p)"/>
+            <imsld:participant roleref="opposer"/>
+            <imsld:participant roleref="seconder(o)"/>
+            <imsld:participant roleref="speakers"/>
+            <imsld:size maxnumber="10" minnumber="10" defaultnumber="10"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="proposer"/>
+                <imsld:instruction>Propose the motion</imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="seconder(p)"/>
+                <imsld:instruction>Second the Proposer</imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 3">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="opposer"/>
+                <imsld:instruction>Oppose the motion</imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 4">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="seconder(o)"/>
+                <imsld:instruction>Second the Opposer</imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 5">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="speakers"/>
+                <imsld:instruction>Speak From The Floor</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 6">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="proposer"/>
+                <imsld:instruction>Sum up for the motion</imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 7">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="opposer"/>
+                <imsld:instruction>Sum up for the opposition</imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 8">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>Do you think that fox-hunting should be illegal</imsld:instruction>
+                <imsld:time-limit>000100</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Debate" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+                <imsld:collaboration-activity-ref ref="step 3"/>
+                <imsld:collaboration-activity-ref ref="step 4"/>
+                <imsld:collaboration-activity-ref ref="step 5"/>
+                <imsld:collaboration-activity-ref ref="step 6"/>
+                <imsld:collaboration-activity-ref ref="step 7"/>
+                <imsld:collaboration-activity-ref ref="step 8"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>Argument for fox hunting </imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:chat>
+                            <imsld:chatting-type>text</imsld:chatting-type>
+                            <imsld:control-type>turn</imsld:control-type>
+                            <imsld:target>group</imsld:target>
+                            <imsld:heading>Discussion board</imsld:heading>
+                            <imsld:add>no</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:vote>
+                            <imsld:voting-type>yesno</imsld:voting-type>
+                            <imsld:heading>Answer the above question by clicking on the yes/no buttons below</imsld:heading>
+                            <imsld:source>none</imsld:source>
+                            <imsld:ideas-number>none</imsld:ideas-number>
+                            <imsld:ideas-text>none</imsld:ideas-text>
+                        </imsld:vote>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Debate">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Debate"/>
+                <imsld:activity-structure-ref ref="S- Debate"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

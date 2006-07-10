@@ -1,0 +1,135 @@
+<imsld:learning-design identifier="Jigsaw:World War II">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier=" p1"/>
+            <imsld:learner identifier="p2"/>
+            <imsld:learner identifier="p3"/>
+            <imsld:learner identifier="p4"/>
+            <imsld:learner identifier="p5"/>
+        </imsld:roles>
+        <imsld:groups identifier="Jigsaw">
+            <imsld:participant roleref=" p1"/>
+            <imsld:participant roleref="p2"/>
+            <imsld:participant roleref="p3"/>
+            <imsld:participant roleref="p4"/>
+            <imsld:participant roleref="p5"/>
+            <imsld:size maxnumber="5" minnumber="5" defaultnumber="5"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>study your particular sub problem</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>make your research</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 3">
+                <imsld:coll-tool-service-ref ref="number 3"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>exchanging ideas with your expert groups </imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 4">
+                <imsld:coll-tool-service-ref ref="number 4"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>Each one will talk about his finding</imsld:instruction>
+                <imsld:time-limit>001500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Jigsaw" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+                <imsld:collaboration-activity-ref ref="step 3"/>
+                <imsld:collaboration-activity-ref ref="step 4"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>World War II</imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:roleinfo>
+                            <imsld:text>you are  responsible for researching Hitler's rise to power in pre-war Germany/ you are responsible for researching concentration camps/ you are  responsible for researching Britain's role in the war/ you are  to research the contribution of the Soviet / you are  responsible for researching about the development of the atom bomb.</imsld:text>
+                        </imsld:roleinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:internetsearch/>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-3 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 3">
+                        <imsld:chat>
+                            <imsld:chatting-type>text</imsld:chatting-type>
+                            <imsld:control-type>turn</imsld:control-type>
+                            <imsld:target>role</imsld:target>
+                            <imsld:heading>Same Role board</imsld:heading>
+                            <imsld:add>no</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-4 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 4">
+                        <imsld:chat>
+                            <imsld:chatting-type>text-and-audio</imsld:chatting-type>
+                            <imsld:control-type>turn</imsld:control-type>
+                            <imsld:target>group</imsld:target>
+                            <imsld:heading>Discussion board</imsld:heading>
+                            <imsld:add>no</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Jigsaw">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Jigsaw"/>
+                <imsld:activity-structure-ref ref="S- Jigsaw"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

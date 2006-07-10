@@ -102,11 +102,18 @@ template::multirow foreach info {
       }
       
       if {$t20 == "checked" } {
-      	set tools [linsert $tools end "SmallGroupWhiteboard"]
+      	set tools [linsert $tools end "SmallGroupImageAnnotation"]
       } 
       if {$t11 == "checked" } {
-      	set tools [linsert $tools end "LargeGroupWhiteboard"]
-      }    
+      	set tools [linsert $tools end "LargeGroupImageAnnotation"]
+      }
+      if {$t2 == "checked" } {
+      	set tools [linsert $tools end "SmallGrouptextDiscussion"]
+      } 
+      if {$t3 == "checked" } {
+      	set tools [linsert $tools end "LargeGrouptextDiscussion"]
+      }
+          
       if {$t32 == "checked" } {
       	set tools [linsert $tools end "Conferencing"]
       } 
@@ -154,6 +161,9 @@ template::multirow foreach info {
       if {$t28 == "checked" } {
       	set tools [linsert $tools end "SilentThinking"]
       }
+      if {$t30 == "checked" } {
+      	set tools [linsert $tools end "IndividualAnnotating"]
+      } 
       if {$t6 == "checked" } {
       	set tools [linsert $tools end "InternetSearch"]
       }
@@ -165,7 +175,7 @@ template::multirow foreach info {
 
 # to fill the roles 
 set rolesl [split $roles "/"]
-# set rolesl [linsert $rolesl end "facilitator"]
+ set rolesl [linsert $rolesl end "facilitator"]
 
 
 ad_return_template

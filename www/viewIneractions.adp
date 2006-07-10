@@ -59,7 +59,7 @@ set datew  [subst {[string range $dates 0 3]/[string range $dates 5 6]/[string r
 			</td>  
 			<td class="form-widget">  
 				<font face="tahoma,verdana,arial,helvetica,sans-serif" size="-1"> 
-					@st@  
+					@sessioninfo@  
 				</font> 
 			</td> 
 		</tr>  
@@ -69,8 +69,8 @@ set datew  [subst {[string range $dates 0 3]/[string range $dates 5 6]/[string r
            
 	
 	<!-- in case selecting idea voting task and the ideas source is the teacher -->
-	<if @t35@ eq "checked">
-		<if @controlld2@ eq "checked">
+	<if @t14@ eq "checked">
+		
 
 			<tr class="form-element">
 			<td class="form-label">
@@ -78,11 +78,11 @@ set datew  [subst {[string range $dates 0 3]/[string range $dates 5 6]/[string r
 			</td>  
 			<td class="form-widget">  
 				<font face="tahoma,verdana,arial,helvetica,sans-serif" size="-1"> 
-					@idt@  
+					@ideastext@  
 				</font> 
 			</td> 
 		</tr>  
-	</if>
+	
 	</if>
 
 	
@@ -100,7 +100,7 @@ set datew  [subst {[string range $dates 0 3]/[string range $dates 5 6]/[string r
 			</td>  
 			<td class="form-widget">  
 				<font face="tahoma,verdana,arial,helvetica,sans-serif" size="-1"> 
-					@srt@ 
+					@roleinfo@ 
 				</font> 
 			</td> 
 		</tr>  
@@ -109,34 +109,7 @@ set datew  [subst {[string range $dates 0 3]/[string range $dates 5 6]/[string r
 	</if>
 
 
-	<!-- in case of selecting the providing rules and instruction  task -->
-	<if @t14@ eq "checked">
-		
-		<tr class="form-element">
-			<td class="form-label">
-				<b>#beehive.Description_text#</b> 
-			</td>  <td class="form-widget">  
-				<font face="tahoma,verdana,arial,helvetica,sans-serif" size="-1"> 
-					@it@ 
-				</font> 
-			</td> 
-		</tr> 
-	</if>
-
-	<!-- in case of selecting the providing Yes/no question for side voting  task -->
-	<if @t36@ eq "checked">
-
-		<tr class="form-element">
-			<td class="form-label">
-				<b>#beehive.yesNo_question#</b> 
-			</td>  
-				<td class="form-widget">  
-				<font face="tahoma,verdana,arial,helvetica,sans-serif" size="-1"> 
-					@ynt@
-				</font> 
-			</td> 
-		</tr> 
-	</if>
+	
 
 
 </table>

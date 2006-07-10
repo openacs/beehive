@@ -1,0 +1,133 @@
+<imsld:learning-design identifier="Role Playing:customer support">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier="customer support person"/>
+            <imsld:learner identifier="customer"/>
+            <imsld:learner identifier="audience"/>
+        </imsld:roles>
+        <imsld:groups identifier="Role Playing">
+            <imsld:participant roleref="customer support person"/>
+            <imsld:participant roleref="customer"/>
+            <imsld:participant roleref="audience"/>
+            <imsld:size maxnumber="5" minnumber="5" defaultnumber="5"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>read the background info</imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>each role read his info</imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 3">
+                <imsld:coll-tool-service-ref ref="number 3"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>each role should start role palying </imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 4">
+                <imsld:coll-tool-service-ref ref="number 4"/>
+                <imsld:turn roleref="facilitator"/>
+                <imsld:instruction>Debrifing</imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Role Playing" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+                <imsld:collaboration-activity-ref ref="step 3"/>
+                <imsld:collaboration-activity-ref ref="step 4"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>customer support</imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:sessioninfo>
+                            <imsld:text>A software company learns that customers are unhappy with customer support and this is causing a loss of customers. In order to improve customer support, the company decides to use team role playing. A trainer brings together a group of 12 software developers and customer support representatives.</imsld:text>
+                        </imsld:sessioninfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:roleinfo>
+                            <imsld:text>This customer is very influential. To lose them would be highly damaging to the company. You must do anything within reason to retain them/You have seriously overspent your software budget and while you are not unhappy with the product, you must convince the customer support person to take back the product and refund your money. Since you cannot admit the actual situation (as it would clearly not be legitimate for a refund), you must find problems with the software sufficient to legitimise the return and refund/wait</imsld:text>
+                        </imsld:roleinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-3 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 3">
+                        <imsld:chat>
+                            <imsld:chatting-type>text-and-audio</imsld:chatting-type>
+                            <imsld:control-type>turn</imsld:control-type>
+                            <imsld:target>group</imsld:target>
+                            <imsld:heading>Discussion board</imsld:heading>
+                            <imsld:add>no</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-4 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 4">
+                        <imsld:chat>
+                            <imsld:chatting-type>text-and-audio</imsld:chatting-type>
+                            <imsld:control-type>turn</imsld:control-type>
+                            <imsld:target>all</imsld:target>
+                            <imsld:heading>Debriefing</imsld:heading>
+                            <imsld:add>no</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Role Playing">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Role Playing"/>
+                <imsld:activity-structure-ref ref="S- Role Playing"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

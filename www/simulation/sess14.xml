@@ -1,0 +1,118 @@
+<imsld:learning-design identifier="Team Pair Solo:Logical relations">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier="participant"/>
+        </imsld:roles>
+        <imsld:groups identifier="Team Pair Solo">
+            <imsld:participant roleref="participant"/>
+            <imsld:size maxnumber="2" minnumber="2" defaultnumber="2"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="facilitator"/>
+                <imsld:instruction>entire session discuss this issue</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>text 1 and 2 are the same information. How would you describe difference in the effect of the two versions
+</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 3">
+                <imsld:coll-tool-service-ref ref="number 3"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>fill the blank to make it Analytical text</imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Team Pair Solo" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+                <imsld:collaboration-activity-ref ref="step 3"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>Logical relations</imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:largegrouptext>
+                            <imsld:text>The primary consideration in choosing a connective is obviously meaning - what is the logical relation that needs to be made explicit? For example, because, so and therefore express different logical  relations from although, but and nevertheless:
+
+    1-He was angry because the food was cold.
+
+    2- The food was cold, so he was angry.
+
+    3- The food was cold. Therefore he was angry.
+
+    4- He was angry although the food was cold.
+
+    
+</imsld:text>
+                        </imsld:largegrouptext>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:smallgroupsharedtext>
+                            <imsld:text>text1--[      ]
+Philip saw Armada in the light of the great cursade hestory.....
+
+text 2-[      ]
+
+Philip saw Armada in the light of a great crusade tt ..... </imsld:text>
+                        </imsld:smallgroupsharedtext>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-3 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 3">
+                        <imsld:silentthinking>
+                            <imsld:text>the far-way places of the word seems to hold a magic spell,__________The Antartic beckoned Capten. ________ The towing ...</imsld:text>
+                        </imsld:silentthinking>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Team Pair Solo">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Team Pair Solo"/>
+                <imsld:activity-structure-ref ref="S- Team Pair Solo"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

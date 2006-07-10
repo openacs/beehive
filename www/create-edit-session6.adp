@@ -13,14 +13,14 @@ tri = iii*4 + 10;
 tooli = iii*4 + 8;
 var st = eval("document.form1.elements[tooli].selectedIndex");
 var toolname = eval("document.form1.elements[tooli].options[st].text");
-if (toolname == "Slides" || toolname == "Debriefing" || toolname == "Evaluation" || toolname == "QA" || toolname == "Overview"  ) {
+if (toolname == "Slides" || toolname == "Debriefing" || toolname == "Evaluation"  || toolname == "Overview"  ) {
 var fa = "facilitator";
 eval("document.form1.elements[tri].options[0].value" + "=fa" );
 eval("document.form1.elements[tri].options[0].text" + "=fa" );
 
 }
 
-if (toolname == "InternetSearch" || toolname == "IndividualWriting" || toolname == "IdeasVoting" || toolname == "YesNo" || toolname == "OwnResolution"  || toolname == "SilentThinking" || toolname == "DynamicLink"   || toolname == "IdeasDiscussion" || toolname == "SessionInfo" || toolname == "GroupInfo" || toolname == "RoleInfo" || toolname == "Survey") {
+if (toolname == "InternetSearch" || toolname == "IndividualWriting" || toolname == "IdeasVoting" || toolname == "YesNo" || toolname == "OwnResolution"  || toolname == "SilentThinking" || toolname == "DynamicLink"   || toolname == "IdeasDiscussion" || toolname == "SessionInfo" || toolname == "GroupInfo" || toolname == "RoleInfo" || toolname == "Survey" || toolname == "SmallGroupAnnotating"|| toolname == "LargeGroupAnnotating" || toolname == "QA" || toolname == "IndividualAnnotating") {
 var fa = "all";
 eval("document.form1.elements[tri].options[0].value" + "=fa" );
 eval("document.form1.elements[tri].options[0].text" + "=fa" );

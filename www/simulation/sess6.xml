@@ -1,0 +1,101 @@
+<imsld:learning-design identifier="Problem Based Learning PBL:Grammer clinic">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier="participant"/>
+        </imsld:roles>
+        <imsld:groups identifier="Problem Based Learning PBL">
+            <imsld:participant roleref="participant"/>
+            <imsld:size maxnumber="5" minnumber="5" defaultnumber="5"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>what is the problem obut this text </imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>underline  the  part of text that has the problem and correct </imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 3">
+                <imsld:coll-tool-service-ref ref="number 3"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>correct the text and discuss the correction with others</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Problem Based Learning PBL" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+                <imsld:collaboration-activity-ref ref="step 3"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>Grammer clinic</imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:sessioninfo>
+                            <imsld:text>The disadvantage of this technology is its relatively high price, but they are going down every year. Five years ago, a laser printer cost more than 10.000 but now, some are even sown to a few hundred </imsld:text>
+                        </imsld:sessioninfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:silentthinking>
+                            <imsld:text>The disadvantage of this technology is its relatively high price, but they are going down every year. Five years ago, a laser printer cost more than 10.000 but now, some are even sown to a few hundred </imsld:text>
+                        </imsld:silentthinking>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-3 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 3">
+                        <imsld:smallgroupsharedtext>
+                            <imsld:text>The disadvantage of this technology is its relatively high price, but they are going down every year. Five years ago, a laser printer cost more than 10.000 but now, some are even sown to a few hundred </imsld:text>
+                        </imsld:smallgroupsharedtext>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Problem Based Learning PBL">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Problem Based Learning PBL"/>
+                <imsld:activity-structure-ref ref="S- Problem Based Learning PBL"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

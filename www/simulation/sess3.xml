@@ -1,0 +1,178 @@
+<imsld:learning-design identifier="Group Nomination technique:collaborative learning?">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier="chairperson"/>
+            <imsld:learner identifier="participant"/>
+        </imsld:roles>
+        <imsld:groups identifier="Group Nomination technique">
+            <imsld:participant roleref="chairperson"/>
+            <imsld:participant roleref="participant"/>
+            <imsld:size maxnumber="5" minnumber="5" defaultnumber="5"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>Read section 1</imsld:instruction>
+                <imsld:time-limit>000100</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>list some differences  between the traditional approach  and the collaborative learning?</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 3">
+                <imsld:coll-tool-service-ref ref="number 3"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>start discussion these differences</imsld:instruction>
+                <imsld:time-limit>000600</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 4">
+                <imsld:coll-tool-service-ref ref="number 4"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>mark these differences to prioritize them</imsld:instruction>
+                <imsld:time-limit>000100</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 5">
+                <imsld:coll-tool-service-ref ref="number 5"/>
+                <imsld:turn roleref="chairperson"/>
+                <imsld:instruction>report the two major differences</imsld:instruction>
+                <imsld:time-limit>000200</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 6">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>Read section 2</imsld:instruction>
+                <imsld:time-limit>000100</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 7">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>list some of the existing  online collaborative tools</imsld:instruction>
+                <imsld:time-limit>000300</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 8">
+                <imsld:coll-tool-service-ref ref="number 4"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>mark these tools to prioritize them</imsld:instruction>
+                <imsld:time-limit>000100</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 9">
+                <imsld:coll-tool-service-ref ref="number 5"/>
+                <imsld:turn roleref="chairperson"/>
+                <imsld:instruction>report the  major tool</imsld:instruction>
+                <imsld:time-limit>000100</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Group Nomination technique" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+                <imsld:collaboration-activity-ref ref="step 3"/>
+                <imsld:collaboration-activity-ref ref="step 4"/>
+                <imsld:collaboration-activity-ref ref="step 5"/>
+                <imsld:collaboration-activity-ref ref="step 6"/>
+                <imsld:collaboration-activity-ref ref="step 7"/>
+                <imsld:collaboration-activity-ref ref="step 8"/>
+                <imsld:collaboration-activity-ref ref="step 9"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>collaborative learning?</imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:sessioninfo>
+                            <imsld:text>section 1 --
+What is collaborative learning?
+Collaborative learning is a method of teaching and learning in which students team together to explore a significant question or create a meaningful project. A group of students discussing a lecture or students from different schools working together over the Internet on a shared assignment are both examples of collaborative learning.
+section 2 --
+What is online collaborative learning?
+Most recently, new technologies have added an exciting new dimension to collaborative and cooperative learning. With the Internet, collaboration can occur without regard to distance or time barriers
+</imsld:text>
+                        </imsld:sessioninfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:chat>
+                            <imsld:chatting-type>text</imsld:chatting-type>
+                            <imsld:control-type>free</imsld:control-type>
+                            <imsld:target>group</imsld:target>
+                            <imsld:heading>The brainstorming Chart</imsld:heading>
+                            <imsld:add>numbering</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-3 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 3">
+                        <imsld:ideasdiscussion/>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-4 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 4">
+                        <imsld:vote>
+                            <imsld:voting-type>idea</imsld:voting-type>
+                            <imsld:heading>idea Voting</imsld:heading>
+                            <imsld:source>learners</imsld:source>
+                            <imsld:ideas-number>none</imsld:ideas-number>
+                            <imsld:ideas-text>none</imsld:ideas-text>
+                        </imsld:vote>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-5 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 5">
+                        <imsld:ownresolution/>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Group Nomination technique">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Group Nomination technique"/>
+                <imsld:activity-structure-ref ref="S- Group Nomination technique"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

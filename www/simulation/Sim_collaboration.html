@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta http-equiv=Content-Type content="text/html;  charset=SHIFT_JIS">
+<TITLE>chatdemo</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<script language=JavaScript1.1>
+<!--
+var appURL = String(document.location);
+if(appURL.indexOf("?") != -1){
+        var appParams = appURL.substr(appURL.indexOf("?"));
+}else{
+        var appParams="";
+}
+
+document.write('<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"');
+document.write('codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"');
+document.write('width="100%" height="100%" id="Sim_collaboration" ALIGN="">');
+document.write('<PARAM NAME=movie VALUE="Sim_collaboration.swf' + appParams + '">');
+document.write('<PARAM NAME=quality VALUE=high><PARAM NAME=bgcolor VALUE=#FFFFFF>');
+document.write('<EMBED src="Sim_collaboration.swf' + appParams +'"quality=high bgcolor=#FFFFFF');
+document.write('swLiveConnect=FALSE width="100%" height="100%" NAME="Sim_collaboration" ALIGN=""');
+document.write('TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer">');
+document.write('</embed>');
+document.write('</object>');
+//-->
+</script>
+</BODY>
+</HTML>

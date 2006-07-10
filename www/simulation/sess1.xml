@@ -1,0 +1,123 @@
+<imsld:learning-design identifier="Group Discussion:Semantic web challenges case study">
+    <imsld:components>
+        <imsld:roles>
+            <imsld:learner identifier="participant"/>
+        </imsld:roles>
+        <imsld:groups identifier="Group Discussion">
+            <imsld:participant roleref="participant"/>
+            <imsld:size maxnumber="5" minnumber="5" defaultnumber="5"/>
+        </imsld:groups>
+        <imsld:activities completeactivity="time-limit">
+            <imsld:collaboration-activity identifier="setup">
+                <imsld:coll-tool-service-ref ref="setup"/>
+                <imsld:turn roleref="none"/>
+                <imsld:instruction>no</imsld:instruction>
+                <imsld:time-limit>000000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 1">
+                <imsld:coll-tool-service-ref ref="number 1"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>Introduce your self to others</imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 2">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>read related info in section 1</imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 3">
+                <imsld:coll-tool-service-ref ref="number 3"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>how you think that semantic web would achieve this?</imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 4">
+                <imsld:coll-tool-service-ref ref="number 2"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>read related info in section 2</imsld:instruction>
+                <imsld:time-limit>000500</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:collaboration-activity identifier="step 5">
+                <imsld:coll-tool-service-ref ref="number 3"/>
+                <imsld:turn roleref="all"/>
+                <imsld:instruction>Discuss the challenges that the collaboration and the individual faculities may face </imsld:instruction>
+                <imsld:time-limit>001000</imsld:time-limit>
+            </imsld:collaboration-activity>
+            <imsld:activity-structure identifier="S- Group Discussion" structure-type="sequence">
+                <imsld:collaboration-activity-ref ref="setup"/>
+                <imsld:collaboration-activity-ref ref="step 1"/>
+                <imsld:collaboration-activity-ref ref="step 2"/>
+                <imsld:collaboration-activity-ref ref="step 3"/>
+                <imsld:collaboration-activity-ref ref="step 4"/>
+                <imsld:collaboration-activity-ref ref="step 5"/>
+            </imsld:activity-structure>
+        </imsld:activities>
+        <imsld:environments>
+            <imsld:environment identifier="E-setup">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="setup">
+                        <imsld:timing>
+                            <imsld:owner>teacher</imsld:owner>
+                        </imsld:timing>
+                        <imsld:staticinfo>
+                            <imsld:heading>Title</imsld:heading>
+                            <imsld:text>Semantic web challenges case study</imsld:text>
+                            <imsld:target>all</imsld:target>
+                            <imsld:position>1</imsld:position>
+                        </imsld:staticinfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-1 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 1">
+                        <imsld:icebreaking/>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-2 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 2">
+                        <imsld:sessioninfo>
+                            <imsld:text>-- section 1
+The Semantic Web, despite presenting learners with new challenges (such as exposure to too much information), will bring the benefit of greater access to sources of knowledge which could be contextualized and then analysed critically (Stutt and Mott, 2004). It will do this by empowering learners with the technological tools to retrieve opposing views on the information that is being sought and encouraging the analysis of both sides of a debate.
+-- section 2
+Case study background:
+The Faculty that you are working for within a large University is commencing a collaboration between like faculties within other universities both nationally and internationally. The desire is to share resources, tools, learning designs and best practice teaching strategies. Many of the schools are adopting a learner-centered paradigm and those that aren't are in the progress of doing so. The collaboration has agreed to look at implementing a semantic web as the basis through which all the universities will collaborate. As a key member of the faculty with an understanding of learning, e-learning and educational technology, you and other key staff members have been tasked to develop strategies to support the implementation of the semantic web for the collaboration. 
+</imsld:text>
+                        </imsld:sessioninfo>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+        <imsld:environments>
+            <imsld:environment identifier="E-3 ">
+                <imsld:service>
+                    <imsld:coll-tool-service identifier="number 3">
+                        <imsld:chat>
+                            <imsld:chatting-type>text-and-audio</imsld:chatting-type>
+                            <imsld:control-type>turn</imsld:control-type>
+                            <imsld:target>group</imsld:target>
+                            <imsld:heading>Discussion board</imsld:heading>
+                            <imsld:add>no</imsld:add>
+                            <imsld:delete>no</imsld:delete>
+                        </imsld:chat>
+                    </imsld:coll-tool-service>
+                </imsld:service>
+            </imsld:environment>
+        </imsld:environments>
+    </imsld:components>
+    <imsld:method>
+        <imsld:play identifier="PLAY-  Group Discussion">
+            <imsld:act>
+                <imsld:group-structure-ref ref="Group Discussion"/>
+                <imsld:activity-structure-ref ref="S- Group Discussion"/>
+            </imsld:act>
+        </imsld:play>
+    </imsld:method>
+</imsld:learning-design>

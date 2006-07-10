@@ -57,7 +57,7 @@ function check() {
 		
 	</if>
         <br><br>
-        <if @t20@ eq "checked" or @t11@ eq "checked" >
+        <if @t20@ eq "checked" or @t11@ eq "checked" or @t30@ eq "checked">
         <if @edit_flage@ not eq "0" >
 	#beehive.Whiteboard_image#  <br><br>
 	</if>
