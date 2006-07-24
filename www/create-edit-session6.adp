@@ -246,16 +246,20 @@ return false;
 
 </tr> 
 </table>
-<table cellspacing="2" cellpadding="2" border="0">
+
+<if @newtechnique_flage@  eq 0>
+
+<table cellspacing="2" cellpadding="2" border="1">
 <tr ><td  BGCOLOR="#F2f1cb">
 <b>
 #beehive.agenda_Description#
 
 @solution@</b><br>
-#beehive.agenda_note#
+
 </td>
 </tr></table>
-
+#beehive.agenda_note#
+</if>
 
 
  <div style="overflow: auto; width: 850px; height: 400px; border-left: 3px gray solid; border-bottom: 3px gray solid; ; border-right: 3px gray solid; border-top: 3px gray solid;padding:3px; margin: 0px">
@@ -266,11 +270,13 @@ return false;
 <br><br>
 </td>
 </tr>
+<if @newtechnique_flage@ not eq 0>
 <tr> <td BGCOLOR="#F2f1cb" >
 #beehive.script_instruction_note#
 
 </td>
 </tr> 
+</if>
 </table>
 <table cellspacing="2" cellpadding="2" border="0">
 <tr class="form-element"> <td class="header-text">#beehive.Step# </td><td class="header-text"><font color="#306754">#beehive.Tool# </font></td>  <td class="header-text">#beehive.Instruction#  </td> <td class="header-text">#beehive.Turn#   </td> <td class="header-text">#beehive.duration#  </td>
