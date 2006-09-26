@@ -13,19 +13,24 @@ tri = iii*4 + 10;
 tooli = iii*4 + 8;
 var st = eval("document.form1.elements[tooli].selectedIndex");
 var toolname = eval("document.form1.elements[tooli].options[st].text");
-if (toolname == "Slides" || toolname == "Debriefing" || toolname == "Evaluation"  || toolname == "Overview"  ) {
+if ( toolname == "Debriefing-EntireSession" || toolname == "Evaluation-EntireSession"  || toolname == "audioOverview-EntireSession"  ) {
 var fa = "facilitator";
 eval("document.form1.elements[tri].options[0].value" + "=fa" );
 eval("document.form1.elements[tri].options[0].text" + "=fa" );
 
 }
 
-if (toolname == "InternetSearch" || toolname == "IndividualWriting" || toolname == "IdeasVoting" || toolname == "YesNo" || toolname == "OwnResolution"  || toolname == "SilentThinking" || toolname == "DynamicLink"   || toolname == "IdeasDiscussion" || toolname == "SessionInfo" || toolname == "GroupInfo" || toolname == "RoleInfo" || toolname == "Survey" || toolname == "SmallGroupAnnotating"|| toolname == "LargeGroupAnnotating" || toolname == "QA" || toolname == "IndividualAnnotating") {
+
+if (toolname == "IndividualImageDrawing-None" || toolname == "InternetSearch-None" || toolname == "IndividualTextWriting-None"  || toolname == "IdeasDiscussion-SmallGroup" || toolname == "IdeasVoting-SmallGroup"  || toolname == "IdeasPosting-SmallGroup"  ||  toolname == "DownloadFile-EntireSession"    || toolname == "textInfo-EntireSession" || toolname == "textInfo-SmallGroup" || toolname == "textInfo-Role" || toolname == "Survey-EntireSession"  || toolname == "QA-EntireSession" || toolname == "YesNo-EntireSession"  ) {
 var fa = "all";
 eval("document.form1.elements[tri].options[0].value" + "=fa" );
 eval("document.form1.elements[tri].options[0].text" + "=fa" );
 
 }
+
+
+
+
 
 
 }

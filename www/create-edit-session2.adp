@@ -50,22 +50,18 @@ alert("to use this component properly you must have more than one role" );
 
 
 
-<if @edit_flage@ not eq 0>
-New
-</if>
+<h1>
 #beehive.Stored_Session_Title# 
  "@technique_name@"
 )
+
+
+
+<input type = "submit" value ="#beehive.Continue# ">
 </h1>
 
-
-
-<br>
-<input type = "submit" value ="#beehive.Continue# ">
-<br>
-<br>
 <hr>
-<h1> #beehive.Tasks# </h1>
+
 <table cellspacing="2" cellpadding="2" border="0">
 
 
@@ -102,9 +98,6 @@ New
 
 
 <tr class="form-element"><td class="form-widget">
-<br>
-<b>#beehive.Administrator_Facilitator_Tasks#  </b> 
-<br>
 
 
 <u> #beehive.Managements_Tasks#  </u>
@@ -126,6 +119,23 @@ New
 
 <input type = "checkbox" name="t5" value ="checked" checked = "true" onclick="return deny(this);"> <font color="#FF0000">  #beehive.Session_Controlling_timer#| <a href= "/beehive/more-task?num=5"> #beehive.Tasks_more# </a> </font>
 <br>
+
+<input type = "checkbox" name="taskn.9" value ="checked"   @t9@> <font color="#333399"> #beehive.Monitoring# | <a href= "/beehive/more-task?num=9"> #beehive.Tasks_more#</a></font>
+<br>
+
+
+<input type = "checkbox" name="taskn.7" value ="checked" @t7@ > <font color="#333399"> #beehive.Tracking# | <a href= "/beehive/more-task?num=7"> #beehive.Tasks_more#</a></font>
+<br>
+<input type = "checkbox" name="taskn.8" value ="checked"   @t8@><font color="#333399">  #beehive.Facilitator_Asking# | <a href= "/beehive/more-task?num=8"> #beehive.Tasks_more#</a></font>
+<br>
+<input type = "checkbox" name="taskn.31" value ="checked"    @t31@><font color="#333399"> #beehive.Note_taking# | <a href= "/beehive/more-task?num=31"> #beehive.Tasks_more#</a> </font>
+
+
+
+<br>
+
+
+<br>
 <u> #beehive.Resources_Provision_Tasks#</u>
 <br>
 
@@ -140,6 +150,9 @@ New
 <br>
 <input type = "checkbox" name="taskn.13" value ="checked"   @t13@ onclick="return deny2(this);"><font color="#306754"> #beehive.Providing_info_Role#| <a href= "/beehive/more-task?num=13"> #beehive.Tasks_more#</a></font>
 <br>
+<input type = "checkbox" name="taskn.15" value ="checked"   @t15@> <font color="#306754"> #beehive.Overview#| <a href= "/beehive/more-task?num=15"> #beehive.Tasks_more#</a></font> 
+
+<br>
 
 <!--
 <u> #beehive.Staged_provision_Tasks#</u> <br>
@@ -149,22 +162,20 @@ New
 
 <br>
 
-<u>#beehive.Guiding_Tasks#</u>
+<u>#beehive.Feedback_Tasks#</u>
 <br>
 
-<input type = "checkbox" name="taskn.9" value ="checked"   @t9@> <font color="#333399"> #beehive.Monitoring# | <a href= "/beehive/more-task?num=9"> #beehive.Tasks_more#</a></font>
+<input type = "checkbox" name="taskn.17" value ="checked"   @t17@> <font color="#306754"> #beehive.Presenting_question# | <a href= "/beehive/more-task?num=17"> #beehive.Tasks_more#</a></font> 
 <br>
-
-
-<input type = "checkbox" name="taskn.7" value ="checked" @t7@ > <font color="#333399"> #beehive.Tracking# | <a href= "/beehive/more-task?num=7"> #beehive.Tasks_more#</a></font>
+<input type = "checkbox" name="taskn.36" value ="checked"    @t36@><font color="#306754"> #beehive.yes_no_voting#| <a href= "/beehive/more-task?num=36"> #beehive.Tasks_more#</a></font>    
 <br>
-<input type = "checkbox" name="taskn.8" value ="checked"   @t8@><font color="#333399">  #beehive.Facilitator_Asking# | <a href= "/beehive/more-task?num=8"> #beehive.Tasks_more#</a></font>
+<input type = "checkbox" name="taskn.14" value ="checked"   @t14@ ><font color="#306754"> #beehive.Providing_Survey#</font> 
 <br>
-
-<input type = "checkbox" name="taskn.15" value ="checked"   @t15@> <font color="#306754"> #beehive.Overview#| <a href= "/beehive/more-task?num=15"> #beehive.Tasks_more#</a></font> 
+<input type = "checkbox" name="taskn.29" value ="checked"    @t29@><font color="#306754"> #beehive.Submitting_own_resolution# | <a href= "/beehive/more-task?num=29"> #beehive.Tasks_more#</a></font>   
 <br>
 <input type = "checkbox" name="taskn.34" value ="checked"   @t34@><font color="#306754"> #beehive.Debriefing# | <a href= "/beehive/more-task?num=34"> #beehive.Tasks_more#</a></font> 
 <br>
+
 
 
 
@@ -190,8 +201,7 @@ New
 </td>  
 
 <td class="form-widget">  
-<b>#beehive.Participant_Tasks#  </b> 
-<br>
+
 <u>#beehive.Group_level_Tasks#</u>
 <br>
 
@@ -253,14 +263,6 @@ New
 <input type = "checkbox" name="taskn.32" value ="checked"    @t32@><font color="#306754"> #beehive.Video_conferencing#  </font>
 
 <br>
-
-<input type = "checkbox" name="taskn.17" value ="checked"   @t17@> <font color="#306754"> #beehive.Presenting_question# | <a href= "/beehive/more-task?num=17"> #beehive.Tasks_more#</a></font> 
-<br>
-<input type = "checkbox" name="taskn.36" value ="checked"    @t36@><font color="#306754"> #beehive.yes_no_voting#| <a href= "/beehive/more-task?num=36"> #beehive.Tasks_more#</a></font>    
-<br>
-<input type = "checkbox" name="taskn.14" value ="checked"   @t14@ ><font color="#306754"> #beehive.Providing_Survey#</font> 
-<br>
-
 <input type = "checkbox" name="taskn.18" value ="checked"   @t18@> <font color="#306754">#beehive.Providing_slides#   <input type = "text" name = "sln" value ="@sln@" size="2">#beehive.Slides_number# | <a href= "/beehive/more-task?num=18"> #beehive.Tasks_more#</a> </font> 
 <br>
 
@@ -271,20 +273,16 @@ New
 <u>#beehive.Individual_Tasks#</u>
 <br>
 <input type = "checkbox" name="taskn.28" value ="checked"    @t28@><font color="#306754"> #beehive.Silent_thinking#| <a href= "/beehive/more-task?num=28"> #beehive.Tasks_more#</a></font> 
-<br>
-<input type = "checkbox" name="taskn.29" value ="checked"    @t29@><font color="#306754"> #beehive.Submitting_own_resolution# | <a href= "/beehive/more-task?num=29"> #beehive.Tasks_more#</a></font>   
-
-<br>
-<input type = "checkbox" name="taskn.6" value ="checked"   @t6@> <font color="#306754"> #beehive.Internet_searching#  | <a href= "/beehive/more-task?num=6"> #beehive.Tasks_more#</a></font> 
 
 <br>
 <input type = "checkbox" name="taskn.30" value ="checked"    @t30@><font color="#306754"> #beehive.self_annotating#| </font>
 
 <br>
-<input type = "checkbox" name="taskn.31" value ="checked"    @t31@><font color="#333399"> #beehive.Note_taking# | <a href= "/beehive/more-task?num=31"> #beehive.Tasks_more#</a> </font>
-
+<input type = "checkbox" name="taskn.6" value ="checked"   @t6@> <font color="#306754"> #beehive.Internet_searching#  | <a href= "/beehive/more-task?num=6"> #beehive.Tasks_more#</a></font> 
 
 <br>
+
+
 
 
 

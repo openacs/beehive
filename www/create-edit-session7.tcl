@@ -313,7 +313,7 @@ set Survey " "
 
 for {set i 0} {$i < [llength $toolsl]} {incr i} { 
 	set envt [linsert $envt end "1"]
-	if {[lindex  $toolsl $i] == "IdeasPosting" } {
+	if {[lindex  $toolsl $i] == "IdeasPosting-SmallGroup" } {
       		set tools [linsert $tools end "chat"]
       		set chat  [linsert $chat end "text"]
       		set chat  [linsert $chat end "free"]         
@@ -331,7 +331,7 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
           		set chat  [linsert $chat end "no"] 
       		}
 	}
-	if {[lindex  $toolsl $i] == "SmallGroupDisscussion" } {
+	if {[lindex  $toolsl $i] == "Disscussion-SmallGroup" } {
       		set tools [linsert $tools end "chat"]
      		 if {$addv1 == "checked" } {
       			set chat  [linsert $chat end "text-and-audio-and-video"]
@@ -358,7 +358,7 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
       
 	}
 
-	if {[lindex  $toolsl $i] == "LargeGroupDisscussion" } {
+	if {[lindex  $toolsl $i] == "Disscussion-EntireSession" } {
       		set tools [linsert $tools end "chat"]
       		if {$addv2 == "checked" } {
       			set chat  [linsert $chat end "text-and-audio-and-video"] 
@@ -384,7 +384,7 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
           		set chat  [linsert $chat end "no"] 
       		}
 	}
-	if {[lindex  $toolsl $i] == "RolesDisscussion" } {
+	if {[lindex  $toolsl $i] == "Disscussion-Roles" } {
       		set tools [linsert $tools end "chat"]
       		if {$addv3 == "checked" } {
       			set chat  [linsert $chat end "text-and-audio-and-video"]
@@ -407,12 +407,12 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
 	}
 
 
-	if {[lindex  $toolsl $i] == "IndividualWriting" } {
+	if {[lindex  $toolsl $i] == "IndividualTextWriting-None" } {
      		 set tools [linsert $tools end "individualwriting"]
            
 	}
 
-	if {[lindex  $toolsl $i] == "Summarizing" } {
+	if {[lindex  $toolsl $i] == "Summarizing-EntireSession" } {
      		set tools [linsert $tools end "chat"]
       		set chat  [linsert $chat end "text"]
       		set chat  [linsert $chat end "turn"]   
@@ -421,11 +421,11 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
       		set chat  [linsert $chat end "group"] 
       		set chat  [linsert $chat end "no"]      
 	}
-		if {[lindex  $toolsl $i] == "IceBreaking" } {
+		if {[lindex  $toolsl $i] == "IceBreaking-SmallGroup" } {
       		set tools [linsert $tools end "icebreaking"]
       		  
 	}
-	if {[lindex  $toolsl $i] == "Evaluation" } {
+	if {[lindex  $toolsl $i] == "Evaluation-EntireSession" } {
       		set tools [linsert $tools end "chat"]
       		set chat  [linsert $chat end "text"]
       		set chat  [linsert $chat end "turn"]   
@@ -434,7 +434,7 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
       		set chat  [linsert $chat end "no"]
                 set chat  [linsert $chat end "no"]      
 	}
-	if {[lindex  $toolsl $i] == "Debriefing" } {
+	if {[lindex  $toolsl $i] == "Debriefing-EntireSession" } {
       		set tools [linsert $tools end "chat"]
       		set chat  [linsert $chat end "text-and-audio"]
       		set chat  [linsert $chat end "turn"]   
@@ -444,7 +444,7 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
       		set chat  [linsert $chat end "no"]     
 	}
         
-	if {[lindex  $toolsl $i] == "IdeasVoting" } {
+	if {[lindex  $toolsl $i] == "IdeasVoting-SmallGroup" } {
       		set tools [linsert $tools end "vote"]
       		set vote  [linsert $vote end "idea"]
       		set vote  [linsert $vote end "idea Voting"] 
@@ -453,85 +453,82 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
          	 	set vote  [linsert $vote end "none"]
 	}
 
-	if {[lindex  $toolsl $i] == "InternetSearch" } {
+	if {[lindex  $toolsl $i] == "InternetSearch-None" } {
       		set tools [linsert $tools end "internetsearch"]
      
 	}
-        if {[lindex  $toolsl $i] == "Conferencing" } {
+        if {[lindex  $toolsl $i] == "Conferencing-EntireSession" } {
       		set tools [linsert $tools end "Conferencing"]
      
 	}
 
-	if {[lindex  $toolsl $i] == "OwnResolution" } {
+	if {[lindex  $toolsl $i] == "OwnResolution-EntireSession" } {
       		set tools [linsert $tools end "ownresolution"]
 	}
 
-	if {[lindex  $toolsl $i] == "QA" } {
+	if {[lindex  $toolsl $i] == "QA-EntireSession" } {
       		set tools [linsert $tools end "qa"]
 	}
-	if {[lindex  $toolsl $i] == "SmallGroupSharedText" } {
+	if {[lindex  $toolsl $i] == "SharedText-SmallGroup" } {
       		set tools [linsert $tools end "smallgroupsharedtext"]
                 set smallgroupsharedtext  [linsert $smallgroupsharedtext end $smallsharedtext]    
 	}
-        if {[lindex  $toolsl $i] == "LargeGroupSharedText" } {
+        if {[lindex  $toolsl $i] == "SharedText-EntireSession" } {
       		set tools [linsert $tools end "largegroupsharedtext"]
                 set largegroupsharedtext  [linsert $largegroupsharedtext end $largesharedtext]    
 	}
-	if {[lindex  $toolsl $i] == "SessionInfo" } {
+	if {[lindex  $toolsl $i] == "textInfo-EntireSession" } {
       		set tools [linsert $tools end "SessionInfo"]
                 set SessionInfo  [linsert $SessionInfo end $sessioninfo]    
 	}
-        if {[lindex  $toolsl $i] == "GroupInfo" } {
+        if {[lindex  $toolsl $i] == "textInfo-SmallGroup" } {
       		set tools [linsert $tools end "GroupInfo"]
                 set GroupInfo  [linsert $GroupInfo end $groupinfo]    
 	}
-        if {[lindex  $toolsl $i] == "RoleInfo" } {
+        if {[lindex  $toolsl $i] == "textInfo-Role" } {
       		set tools [linsert $tools end "RoleInfo"]
                 set RoleInfo  [linsert $RoleInfo end $roleinfo]    
 	}
-        if {[lindex  $toolsl $i] == "Survey" } {
+        if {[lindex  $toolsl $i] == "Survey-EntireSession" } {
       		set tools [linsert $tools end "Survey"]
                 set Survey  [linsert $Survey end $ideasnumber] 
                 set Survey  [linsert $Survey end $ideastext]    
 	}
 
-	if {[lindex  $toolsl $i] == "IdeasDiscussion" } {
+	if {[lindex  $toolsl $i] == "IdeasDiscussion-SmallGroup" } {
       		set tools [linsert $tools end "ideasdiscussion"]   
 	}
-	if {[lindex  $toolsl $i] == "DownloadFile" } {
+	if {[lindex  $toolsl $i] == "DownloadFile-EntireSession" } {
       		set tools [linsert $tools end "dynamiclink"]
       		set dynamiclink  [linsert $dynamiclink end $el]    
 	}
- 	if {[lindex  $toolsl $i] == "SilentThinking" } {
-      		set tools [linsert $tools end "silentthinking"] 
-                set SilentThinking  [linsert $SilentThinking end $individualtext]   
-	}
+ 	
         
-        if {[lindex  $toolsl $i] == "SmallGroupImageAnnotation" } {
+        if {[lindex  $toolsl $i] == "ImageDrawingAnnotating-SmallGroup" } {
       		set tools [linsert $tools end "smallgroupwhiteboard"]    
 	}
-        if {[lindex  $toolsl $i] == "LargeGroupImageAnnotation" } {
+        if {[lindex  $toolsl $i] == "ImageDrawingAnnotating-EntireSession" } {
       		set tools [linsert $tools end "largegroupwhiteboard"]    
 	}
 
-        if {[lindex  $toolsl $i] == "SmallGrouptextDiscussion" } {
+        if {[lindex  $toolsl $i] == "textDiscussingAnnotating-SmallGroup" } {
       		set tools [linsert $tools end "smallgrouptext"]  
                  set smallgrouptext  [linsert $smallgrouptext end $smallannotatedtext]   
 	}
-        if {[lindex  $toolsl $i] == "LargeGrouptextDiscussion" } {
+        if {[lindex  $toolsl $i] == "textDiscussingAnnotating-EntireSession" } {
       		set tools [linsert $tools end "largegrouptext"]
                 set largegrouptext  [linsert $largegrouptext end $largeannotatedtext]    
 	}
-        if {[lindex  $toolsl $i] == "IndividualAnnotating" } {
+        if {[lindex  $toolsl $i] == "IndividualImageDrawing-None" } {
       		set tools [linsert $tools end "individualtext"]    
 	}
-	if {[lindex  $toolsl $i] == "Overview" } {
+	if {[lindex  $toolsl $i] == "audioOverview-EntireSession" } {
       		set tools [linsert $tools end "overview"]
 	}
-        if {[lindex  $toolsl $i] == "Slides" } {
+        if {[lindex  $toolsl $i] == "Slides-EntireSession" } {
       		set tools [linsert $tools end "slides"]
 	}
-	if {[lindex  $toolsl $i] == "YesNo" } {
+	if {[lindex  $toolsl $i] == "YesNo-EntireSession" } {
       		set tools [linsert $tools end "vote"]
       		set vote  [linsert $vote end "yesno"]
       		set vote  [linsert $vote end "Answer the above question by clicking on the yes/no buttons below"] 
@@ -539,11 +536,7 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
           	set vote  [linsert $vote end   "none"]
          	set vote  [linsert $vote end "none"]
 
-	}
-	if {[lindex  $toolsl $i] == "MultipleChoice" } {
-      		set tools [linsert $tools end "vote"]
-      		set vote  [linsert $vote end "MultipleChoice"]   
-	}     
+	}   
 
 	if {[lindex  $toolsl $i] == "repeat" } {
       		set tools [linsert $tools end "repeat"]  

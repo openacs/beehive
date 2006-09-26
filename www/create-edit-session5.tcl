@@ -114,7 +114,7 @@ if { $t12 == "checked" } {
 
 if { $t28 == "checked" } {
     ad_form -extend -name activity_entery_form1 -form {
-	{individualtext:text(textarea)
+	{individualtext:text(textarea),optional
             
 	    {html {  cols 60  rows 10}}
 	    {label "#beehive.individual_Info#"}

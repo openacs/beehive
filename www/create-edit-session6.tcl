@@ -69,103 +69,103 @@ db_multirow info get_session_info {}
 template::multirow foreach info {
       
       if {$t18 == "checked" } {
-      	set tools [linsert $tools end "Slides"]
+      	set tools [linsert $tools end "Slides-EntireSession"]
       }
       if {$t22 == "checked" } {
-      	set tools [linsert $tools end "SmallGroupDisscussion"]
+      	set tools [linsert $tools end "Disscussion-SmallGroup"]
       }
      if {$t23 == "checked" } {
-      	set tools [linsert $tools end "LargeGroupDisscussion"]
+      	set tools [linsert $tools end "Disscussion-EntireSession"]
       }
      if {$t24 == "checked" } {
-      	set tools [linsert $tools end "RolesDisscussion"]
+      	set tools [linsert $tools end "Disscussion-Roles"]
       }
       
       
       if {$t26 == "checked" } {
-      	set tools [linsert $tools end "IdeasPosting"]
+      	set tools [linsert $tools end "IdeasPosting-SmallGroup"]
       } 
 	if {$t38 == "checked" } {
-      	set tools [linsert $tools end "IdeasDiscussion"]
+      	set tools [linsert $tools end "IdeasDiscussion-SmallGroup"]
       }
       if {$t35 == "checked" } {
-      	set tools [linsert $tools end "IdeasVoting"]
+      	set tools [linsert $tools end "IdeasVoting-SmallGroup"]
       }
       if {$t27 == "checked" } {
-      	set tools [linsert $tools end "IceBreaking"]
+      	set tools [linsert $tools end "IceBreaking-SmallGroup"]
       } 
       if {$t37 == "checked" } {
-      	set tools [linsert $tools end "SmallGroupSharedText"]
+      	set tools [linsert $tools end "SharedText-SmallGroup"]
       }
       if {$t10 == "checked" } {
-      	set tools [linsert $tools end "LargeGroupSharedText"]
+      	set tools [linsert $tools end "SharedText-EntireSession"]
       }
       
       if {$t20 == "checked" } {
-      	set tools [linsert $tools end "SmallGroupImageAnnotation"]
+      	set tools [linsert $tools end "ImageDrawingAnnotating-SmallGroup"]
       } 
       if {$t11 == "checked" } {
-      	set tools [linsert $tools end "LargeGroupImageAnnotation"]
+      	set tools [linsert $tools end "ImageDrawingAnnotating-EntireSession"]
       }
       if {$t2 == "checked" } {
-      	set tools [linsert $tools end "SmallGrouptextDiscussion"]
+      	set tools [linsert $tools end "textDiscussingAnnotating-SmallGroup"]
       } 
       if {$t3 == "checked" } {
-      	set tools [linsert $tools end "LargeGrouptextDiscussion"]
+      	set tools [linsert $tools end "textDiscussingAnnotating-EntireSession"]
       }
           
       if {$t32 == "checked" } {
-      	set tools [linsert $tools end "Conferencing"]
+      	set tools [linsert $tools end "Conferencing-EntireSession"]
       } 
 
       if {$t34 == "checked" } {
-      	set tools [linsert $tools end "Debriefing"]
+      	set tools [linsert $tools end "Debriefing-EntireSession"]
       }     
       
       if {$t19 == "checked" } {
-      	set tools [linsert $tools end "Evaluation"]
+      	set tools [linsert $tools end "Evaluation-EntireSession"]
       } 
      if {$t30 == "checked" } {
-      	set tools [linsert $tools end "Summarizing"]
+      	set tools [linsert $tools end "Summarizing-EntireSession"]
       }
       
       if {$t36 == "checked" } {
-      	set tools [linsert $tools end "YesNo"]
+      	set tools [linsert $tools end "YesNo-EntireSession"]
       }  
         
       if {$t17 == "checked" } {
-      	set tools [linsert $tools end "QA"]
+      	set tools [linsert $tools end "QA-EntireSession"]
       }  
 	if {$t14 == "checked" } {
-      	set tools [linsert $tools end "Survey"]
+      	set tools [linsert $tools end "Survey-EntireSession"]
       } 
       if {$t12 == "checked" } {
-      	set tools [linsert $tools end "SessionInfo"]
+      	set tools [linsert $tools end "textInfo-EntireSession"]
       } 
       if {$t4 == "checked" } {
-      	set tools [linsert $tools end "GroupInfo"]
+      	set tools [linsert $tools end "textInfo-SmallGroup"]
       }
       if {$t13 == "checked" } {
-      	set tools [linsert $tools end "RoleInfo"]
+      	set tools [linsert $tools end "textInfo-Role"]
       } 
       if {$t15 == "checked" } {
-      	set tools [linsert $tools end "Overview"]
+      	set tools [linsert $tools end "audioOverview-EntireSession"]
       }  
       if {$t33 == "checked" } {
-      	set tools [linsert $tools end "DownloadFile"]
+      	set tools [linsert $tools end "DownloadFile-EntireSession"]
       }  
        
       if {$t29 == "checked" } {
-      	set tools [linsert $tools end "OwnResolution"]
+      	set tools [linsert $tools end "OwnResolution-EntireSession"]
       } 
       if {$t28 == "checked" } {
-      	set tools [linsert $tools end "SilentThinking"]
+      	set tools [linsert $tools end "IndividualTextWriting-None"]
       }
       if {$t30 == "checked" } {
-      	set tools [linsert $tools end "IndividualAnnotating"]
+      	set tools [linsert $tools end "IndividualImageDrawing-None"]
       } 
       if {$t6 == "checked" } {
-      	set tools [linsert $tools end "InternetSearch"]
+      	set tools [linsert $tools end "InternetSearch-None"]
       }
       
 
