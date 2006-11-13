@@ -167,7 +167,9 @@ template::multirow foreach info {
       if {$t6 == "checked" } {
       	set tools [linsert $tools end "InternetSearch-None"]
       }
-      
+      if {$t19 == "checked" } {
+      	set tools [linsert $tools end "OutsideTask-None"]
+      }
 
 }
 

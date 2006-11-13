@@ -129,7 +129,8 @@ alert("to use this component properly you must have more than one role" );
 <input type = "checkbox" name="taskn.8" value ="checked"   @t8@><font color="#333399">  #beehive.Facilitator_Asking# | <a href= "/beehive/more-task?num=8"> #beehive.Tasks_more#</a></font>
 <br>
 <input type = "checkbox" name="taskn.31" value ="checked"    @t31@><font color="#333399"> #beehive.Note_taking# | <a href= "/beehive/more-task?num=31"> #beehive.Tasks_more#</a> </font>
-
+<br>
+<input type = "checkbox" name="taskn.15" value ="checked"   @t15@> <font color="#306754"> #beehive.Overview#| <a href= "/beehive/more-task?num=15"> #beehive.Tasks_more#</a></font> 
 
 
 <br>
@@ -149,8 +150,7 @@ alert("to use this component properly you must have more than one role" );
 <input type = "checkbox" name="taskn.4" value ="checked"   @t4@><font color="#306754"> #beehive.Providing_group_Info#| <a href= "/beehive/more-task?num=4"> #beehive.Tasks_more#</a></font>
 <br>
 <input type = "checkbox" name="taskn.13" value ="checked"   @t13@ onclick="return deny2(this);"><font color="#306754"> #beehive.Providing_info_Role#| <a href= "/beehive/more-task?num=13"> #beehive.Tasks_more#</a></font>
-<br>
-<input type = "checkbox" name="taskn.15" value ="checked"   @t15@> <font color="#306754"> #beehive.Overview#| <a href= "/beehive/more-task?num=15"> #beehive.Tasks_more#</a></font> 
+
 
 <br>
 
@@ -279,7 +279,9 @@ alert("to use this component properly you must have more than one role" );
 
 <br>
 <input type = "checkbox" name="taskn.6" value ="checked"   @t6@> <font color="#306754"> #beehive.Internet_searching#  | <a href= "/beehive/more-task?num=6"> #beehive.Tasks_more#</a></font> 
+<br>
 
+<input type = "checkbox" name="taskn.19" value ="checked"   @t19@> <font color="#306754">#beehive.outside_tasks#|</font>
 <br>
 
 

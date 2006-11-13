@@ -303,6 +303,7 @@ set smallgrouptext " "
 set largegrouptext " "
 set dynamiclink " "
 set internetsearch " "
+set outsidetask " "
 set SessionInfo " "
 set SilentThinking " "
 set GroupInfo " "
@@ -455,6 +456,10 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
 
 	if {[lindex  $toolsl $i] == "InternetSearch-None" } {
       		set tools [linsert $tools end "internetsearch"]
+     
+	}
+        if {[lindex  $toolsl $i] == "OutsideTask-None" } {
+      		set tools [linsert $tools end "outsidetask"]
      
 	}
         if {[lindex  $toolsl $i] == "Conferencing-EntireSession" } {
@@ -628,7 +633,7 @@ for {set i 0} {$i < [expr [llength $collaborationActivity] - 1]} {incr i} {
 }
 
 # to define all tools that can be used in this system
-set alltools { "staticinfo"  "timing" "chat"  "vote" "individualwriting" "floorcontrol" "guiding" "monitoring" "internetsearch" "ownresolution" "qa"  "silentthinking" "overview" "helping" "dynamiclink" "smallgroupsharedtext" "ideasdiscussion" "slides" "tracking" "smallgroupwhiteboard" "SessionInfo" "noteTaking" "Conferencing" "Survey" "largegroupsharedtext" "largegroupwhiteboard" "GroupInfo" "RoleInfo" "icebreaking" "individualwhiteboard" "smallgrouptext" "largegrouptext" }
+set alltools { "staticinfo"  "timing" "chat"  "vote" "individualwriting" "floorcontrol" "guiding" "monitoring" "internetsearch" "ownresolution" "qa"  "silentthinking" "overview" "helping" "dynamiclink" "smallgroupsharedtext" "ideasdiscussion" "slides" "tracking" "smallgroupwhiteboard" "SessionInfo" "noteTaking" "Conferencing" "Survey" "largegroupsharedtext" "largegroupwhiteboard" "GroupInfo" "RoleInfo" "icebreaking" "individualwhiteboard" "smallgrouptext" "largegrouptext" "outsidetask"}
 
 
 # to publish the xml schema according to this simple structure
@@ -724,7 +729,7 @@ for {set i 0} {$i < [llength $collaborationActivity]} {incr i} {
 # to add tools inside collaboration service 
 set kkk  0
 
-for {set i 1} {$i < 34} {incr i} {         
+for {set i 1} {$i < 35} {incr i} {         
 eval set [subst {k$i}] 0	
 }
 
@@ -973,6 +978,10 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
                         set node [$node lastChild]
       			$node appendXML "<imsld:text>[lindex  $largegrouptext $k33]</imsld:text>"
       			incr k33
+    		}
+                if {[lindex  $alltools 32] == [lindex  $tools $kkk] } {
+      			$node appendXML "<imsld:outsidetask />"
+      			incr k34
     		}
 
 

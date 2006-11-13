@@ -21,7 +21,7 @@ eval("document.form1.elements[tri].options[0].text" + "=fa" );
 }
 
 
-if (toolname == "IndividualImageDrawing-None" || toolname == "InternetSearch-None" || toolname == "IndividualTextWriting-None"  || toolname == "IdeasDiscussion-SmallGroup" || toolname == "IdeasVoting-SmallGroup"  || toolname == "IdeasPosting-SmallGroup"  ||  toolname == "DownloadFile-EntireSession"    || toolname == "textInfo-EntireSession" || toolname == "textInfo-SmallGroup" || toolname == "textInfo-Role" || toolname == "Survey-EntireSession"  || toolname == "QA-EntireSession" || toolname == "YesNo-EntireSession"  ) {
+if (toolname == "IndividualImageDrawing-None" || toolname == "InternetSearch-None"|| toolname =="OutsideTask-None"|| toolname == "IndividualTextWriting-None"  || toolname == "IdeasDiscussion-SmallGroup" || toolname == "IdeasVoting-SmallGroup"  || toolname == "IdeasPosting-SmallGroup"  ||  toolname == "DownloadFile-EntireSession"    || toolname == "textInfo-EntireSession" || toolname == "textInfo-SmallGroup" || toolname == "textInfo-Role" || toolname == "Survey-EntireSession"  || toolname == "QA-EntireSession" || toolname == "YesNo-EntireSession"  ) {
 var fa = "all";
 eval("document.form1.elements[tri].options[0].value" + "=fa" );
 eval("document.form1.elements[tri].options[0].text" + "=fa" );
