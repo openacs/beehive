@@ -255,7 +255,7 @@ alert("to use this component properly you must have more than one role" );
 
 
 <br>
-<input type = "checkbox" name="taskn.20" value ="checked"    @t20@><font color="#306754"> #beehive.smallgroup#  <input type = "checkbox" name="taskn.11" value ="checked"    @t11@> #beehive.largegroup#  #beehive.Whiteboard_drawing#| <a href= "/beehive/more-task?num=20"> #beehive.Tasks_more#</a>  </font>
+<input type = "checkbox" name="taskn.20" value ="checked"    @t20@><font color="#306754"> #beehive.smallgroup#  <input type = "checkbox" name="taskn.11" value ="checked"    @t11@> #beehive.largegroup#  #beehive.Whiteboard_drawing# <input type = "text" name = "slnw" value ="@slnw@" size="2">#beehive.Slides_number#| <a href= "/beehive/more-task?num=20"> #beehive.Tasks_more#</a>  </font>
 
 
 

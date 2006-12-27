@@ -525,7 +525,7 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
                 set largegrouptext  [linsert $largegrouptext end $largeannotatedtext]    
 	}
         if {[lindex  $toolsl $i] == "IndividualImageDrawing-None" } {
-      		set tools [linsert $tools end "individualtext"]    
+      		set tools [linsert $tools end "individualwhiteboard"]    
 	}
 	if {[lindex  $toolsl $i] == "audioOverview-EntireSession" } {
       		set tools [linsert $tools end "overview"]
@@ -910,6 +910,8 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
 		}
                 if {[lindex  $alltools 19] == [lindex  $tools $kkk] } {
       			$node appendXML "<imsld:smallgroupwhiteboard />"
+                        set node [$node lastChild]
+			$node appendXML "<imsld:slidesnumber>[lindex  $slnw $k21]</imsld:slidesnumber>"
       			incr k21
     		}
 
@@ -944,7 +946,9 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
     		}
                 if {[lindex  $alltools 25] == [lindex  $tools $kkk] } {
       			$node appendXML "<imsld:largegroupwhiteboard />"
-      			incr k27
+      			set node [$node lastChild]
+			$node appendXML "<imsld:slidesnumber>[lindex  $slnw $k27]</imsld:slidesnumber>"
+			incr k27
     		}
                 if {[lindex  $alltools 26] == [lindex  $tools $kkk] } {
       			$node appendXML "<imsld:groupinfo />"
@@ -965,7 +969,9 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
     		}
                 if {[lindex  $alltools 29] == [lindex  $tools $kkk] } {
       			$node appendXML "<imsld:individualwhiteboard />"
-      			incr k31
+      			set node [$node lastChild]
+			$node appendXML "<imsld:slidesnumber>[lindex  $slnw $k31]</imsld:slidesnumber>"
+			incr k31
     		}
                 if {[lindex  $alltools 30] == [lindex  $tools $kkk] } {
       			$node appendXML "<imsld:smallgrouptext />"

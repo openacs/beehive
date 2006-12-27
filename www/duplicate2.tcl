@@ -87,11 +87,11 @@ close $ofp
 
 # to upload file for withe board drawing  
 	if {$t20 == "checked" || $t11 == "checked"  || $t30 == "checked" } {
-		         
+		    for {set i 1} {$i <= $slnw} {incr i} {     
 
 
-			set filename1 [subst {$pth/packages/beehive/www/slides/[subst {sess$number}]Slide.jpg}]     
-			set filename2 [subst {$pth/packages/beehive/www/slides/[subst {sess$number1}]Slide.jpg}]  
+			set filename1 [subst {$pth/packages/beehive/www/slides/[subst {sess$number}]Wlide$i.jpg}]     
+			set filename2 [subst {$pth/packages/beehive/www/slides/[subst {sess$number1}]Wlide$i.jpg}]  
 			set ifp [open $filename1 r]
 			set ofp [open $filename2 w]
                         fconfigure $ifp -translation binary
@@ -102,7 +102,7 @@ close $ofp
 
 			close $ifp
 			close $ofp
-
+              }
 
 			
 	}     

@@ -33,6 +33,7 @@ ad_page_contract {
 { anon3: " " }
 { anon4: " " }
 { sln: 0 }
+{ slnw: 1 }
 { roles: " " }
 { newtechnique_flage: 55 }
 
@@ -41,7 +42,6 @@ ad_page_contract {
     session:multirow
         
 }
-
 
 
 #  initialization tasks variables
@@ -109,7 +109,7 @@ db_dml update_values_of_session {}
 set relatedflag  " "
 if {   $t33 != "checked"   && $t18 != "checked"  && $t20 != "checked"   && $t11 != "checked" && $t30 != "checked"} {
 # no uploading files 
-set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln newtechnique_flage}] 
+set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln slnw newtechnique_flage}] 
  ad_returnredirect "create-edit-session5?$url_import_var" 
 
 	

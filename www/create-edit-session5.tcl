@@ -19,6 +19,7 @@ ad_page_contract {
 { newtechnique_flage: 55 }
 { session_id: 55 }
 { sln: 0 }
+{ slnw: 0 }
 { roles: " " }
 
 
@@ -42,7 +43,7 @@ db_multirow session get_session_info {}
 set relatedflag  " "
 if { $t12 != "checked"    && $t13 != "checked" && $t14 != "checked"  && $t4 != "checked" && $t37 != "checked" && $t10 != "checked"  && $t28 != "checked" && $t2 != "checked" && $t3 != "checked"} {
 	# no related info is needed
-set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln newtechnique_flage}] 
+set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln slnw newtechnique_flage}] 
 ad_returnredirect "create-edit-session6?$url_import_var"
 ad_script_abort
 }
@@ -74,7 +75,11 @@ ad_form -name activity_entery_form1    -form {
                  {before_html "[_ beehive.character_note]"} 
                  {value $sln}
 	}
-        
+        {slnw:text(hidden) 
+                 {before_html "[_ beehive.character_note]"} 
+                 {value $slnw}
+	}
+
 	
 	{newtechnique_flage:text(hidden) 
                  {value $newtechnique_flage}
@@ -251,7 +256,7 @@ ad_form -extend -name activity_entery_form1 -form {
 
 } -after_submit {
 
-	set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln newtechnique_flage}] 
+	set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln slnw newtechnique_flage}] 
 	ad_returnredirect "create-edit-session6?$url_import_var"
         ad_script_abort
 }

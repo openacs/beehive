@@ -57,6 +57,7 @@ if {$edit_flage != 0 } {
 
 	}
 	set sln 1
+        set slnw 1
 	# Customize the page title to reflect the fact that this form is used to
 	# create a new session.
 	set page_title "New Session"

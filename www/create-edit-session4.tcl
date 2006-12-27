@@ -22,6 +22,7 @@ ad_page_contract {
 
 { ell: " " }
 { sln: 0 }
+{ slnw: 0 }
 { newtechnique_flage: 55 }
 
 
@@ -75,16 +76,16 @@ template::multirow foreach session {
 
 # to upload file for withe board drawing  
 	if {$t20 == "checked" || $t11 == "checked"  || $t30 == "checked" } {
-		         
-			set localfilewb [ns_queryget sld]
+		for {set i 1} {$i <= $slnw} {incr i} { 
+			set localfilewb [ns_queryget [subst {wlide$i}]]
 
 			if {$localfilewb != "" } {
-				set ifpwb [open [ns_queryget [subst {sld}].tmpfile] r]
+				set ifpwb [open [ns_queryget [subst {wlide$i}].tmpfile] r]
    
 				# open the filename for writing
 
 				set pthwb [acs_root_dir]  
-				set filenamewb [subst {$pthwb/packages/beehive/www/slides/[subst {sess$session_id}]Slide.jpg}] 
+				set filenamewb [subst {$pthwb/packages/beehive/www/slides/[subst {sess$session_id}]Wlide$i.jpg}] 
 
 				set ofpwb [open $filenamewb w+]
 
@@ -96,7 +97,7 @@ template::multirow foreach session {
 				close $ifpwb
 				close $ofpwb
 			}
-		
+		}
 	}     
 # to upload staged file 
 	if {$t33 == "checked" } {
@@ -127,7 +128,7 @@ template::multirow foreach session {
 		
 	}     
 
-set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln newtechnique_flage}] 
+set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln slnw newtechnique_flage}] 
 ad_returnredirect "create-edit-session5?$url_import_var" 
 
 

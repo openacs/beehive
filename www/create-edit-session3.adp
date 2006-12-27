@@ -30,6 +30,7 @@ function check() {
 <input type = "hidden" name = "technique_num" value = @technique_num@>
 <input type = "hidden" name = "roles" value = "@roles@">
 <input type = "hidden" name = "sln" value = @sln@>
+<input type = "hidden" name = "slnw" value = @slnw@>
 <input type = "hidden" name = "ell" value = @el@>
 <input type = "hidden" name = "newtechnique_flage" value = "@newtechnique_flage@">
 
@@ -65,11 +66,21 @@ function check() {
         #beehive.Whiteboard_image_change# <br><br>
 
         </else>
+	       
+		<%
+		for {set i 1} {$i <= $slnw} {incr i} { 
+	 		set wl [subst {wlide$i}]
+		%>
+		#beehive.Slide#@i@ <input type="file" name="@wl@"  size="40" ><br>
+		<%
+		}
+		%>
+
 	
-		#beehive.Slide# <input type="file" name="sld"  size="40" ><br>
-	
-	<br><br>	
+		
 	</if>
+        <br><br>
+
 
         
 	<!-- in case of selecting the providing Staged dynamic link task -->

@@ -19,6 +19,7 @@ ad_page_contract {
 { ell: " " }
 
 { sln: 0 }
+{ slnw: 0 }
 { newtechnique_flage: 55 }
 
 
