@@ -157,7 +157,10 @@ alert("to use this component properly you must have more than one role" );
 <!--
 <u> #beehive.Staged_provision_Tasks#</u> <br>
 -->
-<input type = "checkbox" name="taskn.33" value ="checked"    @t33@><font color="#306754"> #beehive.Providing_staged_resource# | <a href= "/beehive/more-task?num=33"> #beehive.Tasks_more#</a></font> 
+<input type = "checkbox" name="taskn.33" value ="checked"    @t33@><font color="#306754"> #beehive.Providing_staged_resource# <input type = "text" name = "fln" value ="@fln@" size="2">#beehive.Files_number# | <a href= "/beehive/more-task?num=33"> #beehive.Tasks_more#</a></font> 
+
+
+
 
 
 <br>

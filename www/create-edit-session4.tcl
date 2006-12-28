@@ -22,6 +22,7 @@ ad_page_contract {
 
 { ell: " " }
 { sln: 0 }
+{ fln: 0 }
 { slnw: 0 }
 { newtechnique_flage: 55 }
 
@@ -36,8 +37,6 @@ set tools " "
 
 
 
-# to update/save uploaded files names 
-db_dml edit_values {}
 
 
 # get the session's tasks       
@@ -101,16 +100,17 @@ template::multirow foreach session {
 	}     
 # to upload staged file 
 	if {$t33 == "checked" } {
-		         
-			set localfiledf [ns_queryget el]
-
+		       
+		for {set i 1} {$i <= $fln} {incr i} {   
+			set localfiledf [ns_queryget [subst {flide$i}]]
+                        
 			if {$localfiledf != "" } {
-				set ifpdf [open [ns_queryget [subst {el}].tmpfile] r]
+				set ifpdf [open [ns_queryget [subst {flide$i}].tmpfile] r]
    
 				# open the filename for writing
 
 				set pthdf [acs_root_dir]  
-				set filenamedf [subst {$pthdf/packages/beehive/www/slides/[subst {sess$session_id}]$el}] 
+				set filenamedf [subst {$pthdf/packages/beehive/www/slides/[subst {file$session_id}]$localfiledf}] 
 
 				set ofpdf [open $filenamedf w+]
 
@@ -121,14 +121,21 @@ template::multirow foreach session {
 
 				close $ifpdf
 				close $ofpdf
+                                set el $localfiledf/$el
+
+                                # to update/save uploaded files names 
+				db_dml edit_values {}
+
 			}  else {
                                 # to update staged file name
 				db_dml edit_value2 {}
 			} 
 		
+
+		}
 	}     
 
-set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln slnw newtechnique_flage}] 
+set url_import_var [export_vars  {edit_flage  technique_name technique_num  session_id  roles sln slnw newtechnique_flage fll}] 
 ad_returnredirect "create-edit-session5?$url_import_var" 
 
 

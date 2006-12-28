@@ -23,6 +23,7 @@ ad_page_contract {
 { roles: " " }
 
 
+
 } -properties { 
     session:multirow
     

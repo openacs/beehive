@@ -92,8 +92,15 @@ function check() {
         #beehive.Staged_file_changed#  <br><br>
 
         </else>
-	
-		#beehive.File# <input type="file" name="el"  size="40" ><br>
+	        <%
+		for {set i 1} {$i <= $fln} {incr i} { 
+	 		set fl [subst {flide$i}]
+		%>
+		#beehive.File#@i@ <input type="file" name="@fl@"  size="40" ><br>
+		<%
+		}
+		%>
+		 
 	
     <br><br>		
    </if>

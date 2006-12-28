@@ -33,6 +33,7 @@ ad_page_contract {
 { anon3: " " }
 { anon4: " " }
 { sln: 0 }
+{ fln: 0 }
 { slnw: 1 }
 { roles: " " }
 { newtechnique_flage: 55 }

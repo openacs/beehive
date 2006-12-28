@@ -11,6 +11,11 @@ ad_page_contract {
 { titlew: " " }
 { datew: " " }
 
+
+} -properties { 
+
+filess:onelist
+
 }
 
 set user_id [ad_conn user_id]
@@ -110,9 +115,12 @@ close $ofp
 
 # to upload staged file 
 	if {$t33 == "checked" } {
-		         
-			set filename1 [subst {$pth/packages/beehive/www/slides/[subst {sess$number}]$el}]     
-			set filename2 [subst {$pth/packages/beehive/www/slides/[subst {sess$number1}]$el}]  
+
+set filess [split $el "/"]
+		        for {set i 0} {$i < [expr [llength $filess] - 1]} {incr i} {         
+			
+			set filename1 [subst {$pth/packages/beehive/www/slides/[subst {file$number}][lindex  $filess $i]}]     
+			set filename2 [subst {$pth/packages/beehive/www/slides/[subst {file$number1}][lindex  $filess $i]}]  
 			set ifp [open $filename1 r+]
 			set ofp [open $filename2 w+]
                         fconfigure $ifp -translation binary
@@ -123,7 +131,7 @@ close $ofp
 
 			close $ifp
 			close $ofp
-
+                      }
 
 
 	}     

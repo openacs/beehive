@@ -41,6 +41,7 @@ ad_page_contract {
     tr:onelist
     tl:onelist
     rolesl:onelist
+    filess:onelist
     participants:onelist  
     collaborationActivity:onelist 
     collToolServiceId:onelist 
@@ -154,6 +155,11 @@ template::multirow foreach info {
 set rolesl [split $roles "/"]
 
 set participants $rolesl
+
+
+set filess [split $el "/"]
+
+
 
 
 # start filling the tools array from  only the supporting tools
@@ -505,7 +511,14 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
 	}
 	if {[lindex  $toolsl $i] == "DownloadFile-EntireSession" } {
       		set tools [linsert $tools end "dynamiclink"]
-      		set dynamiclink  [linsert $dynamiclink end $el]    
+      		
+			for {set i 0} {$i < [llength $filess]} {incr i} {         
+				set fname [lindex  $filess $i]
+                                set dynamiclink  [linsert $dynamiclink end $fname]   
+				
+			}
+
+		  
 	}
  	
         
@@ -878,9 +891,14 @@ for {set i 0} {$i < [llength $environment]} {incr i} {
     		}
 		if {[lindex  $alltools 14] == [lindex  $tools $kkk] } {
       			$node appendXML "<imsld:dynamiclink />"
-      			set node [$node lastChild]
-      			$node appendXML "<imsld:text>[lindex  $dynamiclink $k16]</imsld:text>"
+      			
+			
+                        set node [$node lastChild]  
+			for {set i 0} {$i < [expr [llength $filess] - 1]} {incr i} {         
+			$node appendXML "<imsld:text>[lindex  $dynamiclink $k16]</imsld:text>"
       			incr k16
+			}
+               
     		}
 		if {[lindex  $alltools 15] == [lindex  $tools $kkk] } {
       			$node appendXML "<imsld:smallgroupsharedtext />"
