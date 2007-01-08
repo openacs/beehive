@@ -77,7 +77,7 @@ ad_form -name activity_entery_form1    -form {
                  {value $sln}
 	}
         {slnw:text(hidden) 
-                 {before_html "[_ beehive.character_note]"} 
+                 
                  {value $slnw}
 	}
 
