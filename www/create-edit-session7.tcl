@@ -288,9 +288,9 @@ for {set i 0} {$i < [llength $toolsl]} {incr i} {
 	}
 }
 
-# now we start filling the tools array with fixed tools 
+# now we start filling the tools array with fixed tools
 set toolsl $toolsll
-#  envt hold the number of tools inside each enviroment
+#  envt hold the number of tools inside each environment
 set envt " "
 set envt [linsert $envt end $toolc]
 
