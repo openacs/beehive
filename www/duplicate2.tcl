@@ -61,7 +61,7 @@ set ifp [open $filename1 r+]
 set ofp [open $filename2 w+]
 
 
-ns_cpfp $ifp $ofp
+fcopy $ifp $ofp
 
 close $ifp
 close $ofp
@@ -78,7 +78,7 @@ close $ofp
                         fconfigure $ifp -translation binary
 			fconfigure $ofp -translation binary
 
-			ns_cpfp $ifp $ofp
+			fcopy $ifp $ofp
 
 			close $ifp
 			close $ofp
@@ -103,7 +103,7 @@ close $ofp
 			fconfigure $ofp -translation binary
 
 
-			ns_cpfp $ifp $ofp
+			fcopy $ifp $ofp
 
 			close $ifp
 			close $ofp
@@ -127,7 +127,7 @@ set filess [split $el "/"]
 			fconfigure $ofp -translation binary
 
 
-			ns_cpfp $ifp $ofp
+			fcopy $ifp $ofp
 
 			close $ifp
 			close $ofp

@@ -64,7 +64,7 @@ template::multirow foreach session {
 				fconfigure $ifp -translation binary
 				fconfigure $ofp -translation binary
 
-				ns_cpfp $ifp $ofp
+				fcopy $ifp $ofp
 
 				close $ifp
 				close $ofp
@@ -91,7 +91,7 @@ template::multirow foreach session {
 				fconfigure $ifpwb -translation binary
 				fconfigure $ofpwb -translation binary
 
-				ns_cpfp $ifpwb $ofpwb
+				fcopy $ifpwb $ofpwb
 
 				close $ifpwb
 				close $ofpwb
@@ -117,7 +117,7 @@ template::multirow foreach session {
 				fconfigure $ifpdf -translation binary
 				fconfigure $ofpdf -translation binary
 
-				ns_cpfp $ifpdf $ofpdf
+				fcopy $ifpdf $ofpdf
 
 				close $ifpdf
 				close $ofpdf
